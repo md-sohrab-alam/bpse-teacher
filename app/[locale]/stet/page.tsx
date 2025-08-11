@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { Calendar, FileText, BookOpen, Calculator, Download, ExternalLink, Bell } from 'lucide-react'
+import { Calendar, FileText, BookOpen, Calculator, Download, ExternalLink, Bell, AlertTriangle } from 'lucide-react'
 import Link from 'next/link'
 
 interface STETPageProps {
@@ -26,10 +26,13 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
           <div className="lg:col-span-3">
             <div className="mb-8">
               <div className="flex items-center justify-between mb-4">
-                <h1 className="text-4xl font-bold text-gray-900">STET (BSEB)</h1>
-                <Badge variant="secondary" className="bg-green-100 text-green-800">
-                  Application Open
-                </Badge>
+                <div className="flex items-center gap-4">
+                  <h1 className="text-4xl font-bold text-gray-900">STET (BSEB)</h1>
+                  <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
+                    <AlertTriangle className="w-4 h-4 mr-1" />
+                    Pending 2025
+                  </Badge>
+                </div>
               </div>
               <p className="text-xl text-gray-600">
                 Secondary Teacher Eligibility Test for Bihar
