@@ -1,0 +1,152 @@
+{
+  "navigation": {
+    "home": "होम",
+    "stet": "एसटीईटी",
+    "bpscTeacher": "बीपीएससी शिक्षक",
+    "eligibilityChecker": "पात्रता जांचकर्ता",
+    "syllabus": "पाठ्यक्रम",
+    "cutoff": "कट-ऑफ और पास मार्क्स",
+    "news": "समाचार और अपडेट",
+    "resources": "संसाधन",
+    "mockTests": "मॉक टेस्ट",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क"
+  },
+  "home": {
+    "hero": {
+      "title": "बिहार सरकारी शिक्षक भर्ती की पूरी गाइड",
+      "subtitle": "बिहार में सरकारी शिक्षक बनने के लिए आपको जो कुछ चाहिए वह सब पाएं",
+      "searchPlaceholder": "बिहार शिक्षक परीक्षाओं के बारे में कुछ भी खोजें...",
+      "searchButton": "खोजें"
+    },
+    "examCards": {
+      "stet": {
+        "title": "एसटीईटी (बीएसईबी)",
+        "description": "बिहार के लिए माध्यमिक शिक्षक पात्रता परीक्षा",
+        "latestUpdate": "नवीनतम अपडेट"
+      },
+      "bpsc": {
+        "title": "बीपीएससी शिक्षक",
+        "description": "बिहार लोक सेवा आयोग शिक्षक भर्ती",
+        "latestUpdate": "नवीनतम अपडेट"
+      }
+    },
+    "quickLinks": {
+      "title": "त्वरित लिंक",
+      "eligibility": "पात्रता जांचें",
+      "syllabus": "पाठ्यक्रम देखें",
+      "cutoff": "कट-ऑफ मार्क्स",
+      "mockTests": "मॉक टेस्ट दें"
+    },
+    "latestUpdates": {
+      "title": "नवीनतम अपडेट"
+    }
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "view": "देखें",
+    "download": "डाउनलोड",
+    "submit": "सबमिट करें",
+    "back": "वापस",
+    "next": "अगला",
+    "previous": "पिछला",
+    "close": "बंद करें",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "clear": "साफ़ करें",
+    "language": "भाषा",
+    "english": "English",
+    "hindi": "हिंदी"
+  },
+  "eligibility": {
+    "title": "पात्रता जांचकर्ता",
+    "subtitle": "एसटीईटी और बीपीएससी शिक्षक भर्ती के लिए अपनी पात्रता जांचें",
+    "form": {
+      "personalInfo": "व्यक्तिगत जानकारी",
+      "dateOfBirth": "जन्म तिथि",
+      "category": "श्रेणी",
+      "domicile": "निवास",
+      "education": "शैक्षिक योग्यता",
+      "highestQualification": "उच्चतम योग्यता",
+      "graduationPercentage": "स्नातक प्रतिशत",
+      "postGraduation": "स्नातकोत्तर",
+      "subject": "विषय",
+      "professional": "व्यावसायिक योग्यता",
+      "bed": "बी.एड",
+      "deled": "डी.एल.एड",
+      "ctet": "सीटीईटी",
+      "stet": "एसटीईटी",
+      "targetLevel": "लक्ष्य कक्षा स्तर",
+      "attempts": "पिछले प्रयास",
+      "checkEligibility": "पात्रता जांचें"
+    },
+    "result": {
+      "eligible": "पात्र",
+      "notEligible": "अपात्र",
+      "reasons": "कारण",
+      "nextSteps": "अगले कदम",
+      "downloadPdf": "पीडीएफ डाउनलोड",
+      "saveResult": "परिणाम सहेजें"
+    }
+  },
+  "exams": {
+    "tabs": {
+      "overview": "अवलोकन",
+      "eligibility": "पात्रता",
+      "dates": "महत्वपूर्ण तिथियां",
+      "syllabus": "पाठ्यक्रम",
+      "pattern": "परीक्षा पैटर्न",
+      "cutoff": "कट-ऑफ",
+      "downloads": "डाउनलोड"
+    },
+    "sidebar": {
+      "checkEligibility": "पात्रता जांचें",
+      "officialLink": "आधिकारिक लिंक",
+      "setReminder": "रिमाइंडर सेट करें"
+    }
+  },
+  "mockTests": {
+    "title": "मॉक टेस्ट",
+    "startTest": "टेस्ट शुरू करें",
+    "duration": "अवधि",
+    "questions": "प्रश्न",
+    "negativeMarking": "नकारात्मक अंकन",
+    "timer": "टाइमर",
+    "questionNavigator": "प्रश्न नेविगेटर",
+    "submitTest": "टेस्ट सबमिट करें",
+    "result": {
+      "title": "टेस्ट परिणाम",
+      "score": "स्कोर",
+      "correct": "सही",
+      "wrong": "गलत",
+      "unattempted": "अप्रयासित",
+      "percentage": "प्रतिशत",
+      "downloadResult": "परिणाम डाउनलोड"
+    }
+  },
+  "news": {
+    "title": "समाचार और अपडेट",
+    "filters": {
+      "all": "सभी",
+      "stet": "एसटीईटी",
+      "bpsc": "बीपीएससी",
+      "application": "आवेदन",
+      "admitCard": "प्रवेश पत्र",
+      "result": "परिणाम",
+      "notice": "सूचना"
+    }
+  },
+  "admin": {
+    "title": "एडमिन डैशबोर्ड",
+    "exams": "परीक्षाएं",
+    "news": "समाचार",
+    "mockTests": "मॉक टेस्ट",
+    "users": "उपयोगकर्ता",
+    "ruleSets": "नियम सेट"
+  }
+}

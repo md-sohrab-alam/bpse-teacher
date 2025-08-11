@@ -1,0 +1,198 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum ExamKey {
+  STET
+  BPSC_TEACHER
+}
+
+enum Lang {
+  EN
+  HI
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  role      Role     @default(STUDENT)
+  attempts  Attempt[]
+  accounts  Account[]
+  sessions  Session[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Exam {
+  id            String   @id @default(cuid())
+  key           ExamKey  // STET or BPSC_TEACHER
+  overviewEn    String
+  overviewHi    String
+  eligibilityEn String
+  eligibilityHi String
+  patternEn     String
+  patternHi     String
+  syllabusEn    String   // markdown
+  syllabusHi    String   // markdown
+  downloads     Download[]
+  dates         ExamDate[]
+  cutoffs       Cutoff[]
+  mockTests     MockTest[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ExamDate {
+  id        String   @id @default(cuid())
+  examId    String
+  labelEn   String
+  labelHi   String
+  date      DateTime
+  Exam      Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+}
+
+model Cutoff {
+  id        String   @id @default(cuid())
+  examId    String
+  year      Int
+  category  String
+  passMarks Float?   // qualifying marks, if fixed
+  cutoff    Float?   // actual cutoff if available
+  notesEn   String?
+  notesHi   String?
+  Exam      Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+}
+
+model Download {
+  id      String   @id @default(cuid())
+  examId  String
+  titleEn String
+  titleHi String
+  url     String
+  Exam    Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+}
+
+model News {
+  id          String   @id @default(cuid())
+  titleEn     String
+  titleHi     String
+  sourceUrl   String
+  tag         String   // "Application", "Admit Card", "Result", "Notice"
+  examKey     ExamKey?
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model MockTest {
+  id           String   @id @default(cuid())
+  examId       String
+  titleEn      String
+  titleHi      String
+  durationSec  Int
+  negMarkPerQ  Float
+  isPublished  Boolean  @default(false)
+  questions    Question[]
+  attempts     Attempt[]
+  Exam         Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Question {
+  id             String   @id @default(cuid())
+  mockTestId     String
+  textEn         String
+  textHi         String
+  optionAEn      String
+  optionAHi      String
+  optionBEn      String
+  optionBHi      String
+  optionCEn      String
+  optionCHi      String
+  optionDEn      String
+  optionDHi      String
+  correct        String   // "A"|"B"|"C"|"D"
+  explanationEn  String?
+  explanationHi  String?
+  MockTest       MockTest @relation(fields: [mockTestId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Attempt {
+  id           String   @id @default(cuid())
+  userId       String
+  mockTestId   String
+  startedAt    DateTime @default(now())
+  submittedAt  DateTime?
+  score        Float
+  correctCount Int
+  wrongCount   Int
+  lang         String
+  answers      Json
+  User         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  MockTest     MockTest @relation(fields: [mockTestId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model RuleSet {
+  id        String   @id @default(cuid())
+  name      String   // e.g., "STET-Secondary-2025"
+  examKey   ExamKey
+  level     String   // PRIMARY / UPPER_PRIMARY / SECONDARY / SR_SECONDARY
+  json      Json     // rules JSON
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

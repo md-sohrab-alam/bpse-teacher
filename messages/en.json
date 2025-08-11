@@ -1,0 +1,152 @@
+{
+  "navigation": {
+    "home": "Home",
+    "stet": "STET",
+    "bpscTeacher": "BPSC Teacher",
+    "eligibilityChecker": "Eligibility Checker",
+    "syllabus": "Syllabus",
+    "cutoff": "Cut-off & Pass Marks",
+    "news": "News & Updates",
+    "resources": "Resources",
+    "mockTests": "Mock Tests",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Complete Guide to Bihar Government Teacher Recruitment",
+      "subtitle": "Find everything you need to become a government teacher in Bihar",
+      "searchPlaceholder": "Find anything about Bihar Teacher exams...",
+      "searchButton": "Search"
+    },
+    "examCards": {
+      "stet": {
+        "title": "STET (BSEB)",
+        "description": "Secondary Teacher Eligibility Test for Bihar",
+        "latestUpdate": "Latest Update"
+      },
+      "bpsc": {
+        "title": "BPSC Teacher",
+        "description": "Bihar Public Service Commission Teacher Recruitment",
+        "latestUpdate": "Latest Update"
+      }
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "eligibility": "Check Eligibility",
+      "syllabus": "View Syllabus",
+      "cutoff": "Cut-off Marks",
+      "mockTests": "Take Mock Test"
+    },
+    "latestUpdates": {
+      "title": "Latest Updates"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "download": "Download",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "language": "Language",
+    "english": "English",
+    "hindi": "हिंदी"
+  },
+  "eligibility": {
+    "title": "Eligibility Checker",
+    "subtitle": "Check your eligibility for STET and BPSC Teacher recruitment",
+    "form": {
+      "personalInfo": "Personal Information",
+      "dateOfBirth": "Date of Birth",
+      "category": "Category",
+      "domicile": "Domicile",
+      "education": "Educational Qualification",
+      "highestQualification": "Highest Qualification",
+      "graduationPercentage": "Graduation Percentage",
+      "postGraduation": "Post Graduation",
+      "subject": "Subject",
+      "professional": "Professional Qualification",
+      "bed": "B.Ed",
+      "deled": "D.El.Ed",
+      "ctet": "CTET",
+      "stet": "STET",
+      "targetLevel": "Target Class Level",
+      "attempts": "Previous Attempts",
+      "checkEligibility": "Check Eligibility"
+    },
+    "result": {
+      "eligible": "Eligible",
+      "notEligible": "Not Eligible",
+      "reasons": "Reasons",
+      "nextSteps": "Next Steps",
+      "downloadPdf": "Download PDF",
+      "saveResult": "Save Result"
+    }
+  },
+  "exams": {
+    "tabs": {
+      "overview": "Overview",
+      "eligibility": "Eligibility",
+      "dates": "Important Dates",
+      "syllabus": "Syllabus",
+      "pattern": "Exam Pattern",
+      "cutoff": "Cut-off",
+      "downloads": "Downloads"
+    },
+    "sidebar": {
+      "checkEligibility": "Check Eligibility",
+      "officialLink": "Official Link",
+      "setReminder": "Set Reminder"
+    }
+  },
+  "mockTests": {
+    "title": "Mock Tests",
+    "startTest": "Start Test",
+    "duration": "Duration",
+    "questions": "Questions",
+    "negativeMarking": "Negative Marking",
+    "timer": "Timer",
+    "questionNavigator": "Question Navigator",
+    "submitTest": "Submit Test",
+    "result": {
+      "title": "Test Result",
+      "score": "Score",
+      "correct": "Correct",
+      "wrong": "Wrong",
+      "unattempted": "Unattempted",
+      "percentage": "Percentage",
+      "downloadResult": "Download Result"
+    }
+  },
+  "news": {
+    "title": "News & Updates",
+    "filters": {
+      "all": "All",
+      "stet": "STET",
+      "bpsc": "BPSC",
+      "application": "Application",
+      "admitCard": "Admit Card",
+      "result": "Result",
+      "notice": "Notice"
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "exams": "Exams",
+    "news": "News",
+    "mockTests": "Mock Tests",
+    "users": "Users",
+    "ruleSets": "Rule Sets"
+  }
+}
