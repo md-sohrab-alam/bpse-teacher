@@ -7,7 +7,8 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
   },
   env: {
-    NEXT_DISABLE_ERROR_OVERLAY: 'true'
+    NEXT_DISABLE_ERROR_OVERLAY: 'true',
+    _next_intl_trailing_slash: 'false'
   },
   // SEO and Performance optimizations
   experimental: {
