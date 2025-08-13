@@ -25,6 +25,31 @@ enum Lang {
   HI
 }
 
+enum EducationLevel {
+  SENIOR_SECONDARY
+  BACHELOR
+  MASTER
+  PHD
+}
+
+enum ClassLevel {
+  PRIMARY
+  UPPER_PRIMARY
+  SECONDARY
+  SR_SECONDARY
+}
+
+enum ProfessionalQualification {
+  BED
+  DELED
+  INTEGRATED_BED
+}
+
+enum TetQualification {
+  CTET
+  STET
+}
+
 model User {
   id        String   @id @default(cuid())
   name      String?
@@ -39,7 +64,7 @@ model User {
 
 model Exam {
   id            String   @id @default(cuid())
-  key           ExamKey  // STET or BPSC_TEACHER
+  key           ExamKey  @unique // STET or BPSC_TEACHER
   overviewEn    String
   overviewHi    String
   eligibilityEn String
@@ -57,11 +82,11 @@ model Exam {
 }
 
 model ExamDate {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   examId    String
   labelEn   String
   labelHi   String
-  date      DateTime
+  date      DateTime?
   Exam      Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
 }
 

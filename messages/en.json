@@ -9,6 +9,7 @@
     "news": "News & Updates",
     "resources": "Resources",
     "mockTests": "Mock Tests",
+    "search": "AI Search",
     "about": "About",
     "contact": "Contact"
   },
@@ -40,6 +41,29 @@
     },
     "latestUpdates": {
       "title": "Latest Updates"
+    },
+    "stats": {
+      "activeParticipants": "Active Participants",
+      "userRating": "User Rating",
+      "testsTaken": "Tests Taken",
+      "successRate": "Success Rate"
+    },
+    "buttons": {
+      "learnMore": "Learn More",
+      "refresh": "Refresh",
+      "viewAllUpdates": "View All Latest Updates",
+      "readFullArticle": "Read Full Article",
+      "viewAllNews": "View All News"
+    },
+    "footer": {
+      "description": "Your complete guide to Bihar government teacher recruitment.",
+      "quickLinks": "Quick Links",
+      "resources": "Resources",
+      "contact": "Contact",
+      "email": "Email: info@bpscteacher.com",
+      "phone": "Phone: +91-XXXXXXXXXX",
+      "address": "Address: Patna, Bihar",
+      "copyright": "© 2024 BPSC Teacher. All rights reserved."
     }
   },
   "common": {

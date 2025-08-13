@@ -19,98 +19,80 @@ async function main() {
       patternHi: '**पेपर-1 (कक्षा 9-10):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**पेपर-2 (कक्षा 11-12):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**प्रश्न प्रकार:** वस्तुनिष्ठ MCQs\n**नेगेटिव मार्किंग:** नहीं\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित',
       syllabusEn: `# STET Syllabus
 
-## Paper I (Primary - Classes I to V)
+## Paper I (Classes 9-10)
 
-### Child Development and Pedagogy (30 Questions)
-- Child Development (Primary School Child)
-- Concept of Inclusive education and understanding children with special needs
-- Learning and Pedagogy
+### Child Development and Pedagogy (Teaching Ability) (30 Questions)
+- Growth and development of learners
+- Learning theories and their application
+- Teaching methodologies and techniques
+- Classroom management and discipline
+- Educational psychology principles
 
-### Language I (30 Questions)
-- Language Comprehension
-- Pedagogy of Language Development
+### Subject Concerned (Any one chosen by candidate) (120 Questions)
+- Hindi: Grammar, Literature, Comprehension, Writing Skills
+- English: Grammar, Vocabulary, Literature, Comprehension
+- Mathematics: Number System, Algebra, Geometry, Mensuration, Statistics
+- Science: Physics, Chemistry, Biology, Environment
+- Social Science: History, Geography, Civics, Economics
+- Other subjects: Sanskrit, Urdu, etc., based on the chosen specialization
 
-### Language II (30 Questions)
-- Comprehension
-- Pedagogy of Language Development
+## Paper II (Classes 11-12)
 
-### Mathematics (30 Questions)
-- Content
-- Pedagogical issues
+### Child Development and Pedagogy (Teaching Ability) (30 Questions)
+- Learner development (adolescents)
+- Principles of teaching
+- Curriculum and syllabus planning
+- Educational evaluation
+- Classroom interaction and communication strategies
 
-### Environmental Studies (30 Questions)
-- Content
-- Pedagogical Issues
-
-## Paper II (Upper Primary - Classes VI to VIII)
-
-### Child Development and Pedagogy (30 Questions)
-- Child Development (Elementary School Child)
-- Concept of Inclusive education and understanding children with special needs
-- Learning and Pedagogy
-
-### Language I (30 Questions)
-- Language Comprehension
-- Pedagogy of Language Development
-
-### Language II (30 Questions)
-- Comprehension
-- Pedagogy of Language Development
-
-### Mathematics and Science (60 Questions)
-- Mathematics (30 Questions)
-- Science (30 Questions)
-
-### Social Studies/Social Science (60 Questions)
-- Social Studies (30 Questions)
-- Social Science (30 Questions)`,
+### Subject Concerned (Any one chosen by candidate) (120 Questions)
+- Hindi: Advanced grammar, Prose, Poetry, Drama
+- English: Literature, Grammar, Composition, Phonetics
+- Mathematics: Sets, Relations, Functions, Calculus, Statistics, Probability
+- Physics: Mechanics, Thermodynamics, Electromagnetism, Modern Physics
+- Chemistry: Physical Chemistry, Organic Chemistry, Inorganic Chemistry
+- Biology: Genetics, Ecology, Human Physiology, Biotechnology
+- Commerce: Accountancy, Business Studies, Economics
+- Social Science: History, Political Science, Geography, Sociology
+- Computer Science: Programming, Networking, Data Structures`,
       syllabusHi: `# एसटीईटी पाठ्यक्रम
 
-## पेपर I (प्राथमिक - कक्षा I से V)
+## पेपर I (कक्षा 9-10)
 
-### बाल विकास और शिक्षाशास्त्र (30 प्रश्न)
-- बाल विकास (प्राथमिक स्कूल बच्चा)
-- समावेशी शिक्षा की अवधारणा और विशेष आवश्यकताओं वाले बच्चों की समझ
-- सीखना और शिक्षाशास्त्र
+### बाल विकास और शिक्षाशास्त्र (शिक्षण क्षमता) (30 प्रश्न)
+- शिक्षार्थियों का विकास और वृद्धि
+- सीखने के सिद्धांत और उनका अनुप्रयोग
+- शिक्षण पद्धतियां और तकनीकें
+- कक्षा प्रबंधन और अनुशासन
+- शैक्षिक मनोविज्ञान के सिद्धांत
 
-### भाषा I (30 प्रश्न)
-- भाषा समझ
-- भाषा विकास का शिक्षाशास्त्र
+### संबंधित विषय (उम्मीदवार द्वारा चुना गया कोई एक) (120 प्रश्न)
+- हिंदी: व्याकरण, साहित्य, समझ, लेखन कौशल
+- अंग्रेजी: व्याकरण, शब्दावली, साहित्य, समझ
+- गणित: संख्या प्रणाली, बीजगणित, ज्यामिति, क्षेत्रमिति, सांख्यिकी
+- विज्ञान: भौतिकी, रसायन विज्ञान, जीव विज्ञान, पर्यावरण
+- सामाजिक विज्ञान: इतिहास, भूगोल, नागरिक शास्त्र, अर्थशास्त्र
+- अन्य विषय: संस्कृत, उर्दू, आदि, चुनी गई विशेषज्ञता के आधार पर
 
-### भाषा II (30 प्रश्न)
-- समझ
-- भाषा विकास का शिक्षाशास्त्र
+## पेपर II (कक्षा 11-12)
 
-### गणित (30 प्रश्न)
-- सामग्री
-- शैक्षणिक मुद्दे
+### बाल विकास और शिक्षाशास्त्र (शिक्षण क्षमता) (30 प्रश्न)
+- शिक्षार्थी विकास (किशोर)
+- शिक्षण के सिद्धांत
+- पाठ्यक्रम और पाठ्यक्रम योजना
+- शैक्षिक मूल्यांकन
+- कक्षा संपर्क और संचार रणनीतियां
 
-### पर्यावरण अध्ययन (30 प्रश्न)
-- सामग्री
-- शैक्षणिक मुद्दे
-
-## पेपर II (उच्च प्राथमिक - कक्षा VI से VIII)
-
-### बाल विकास और शिक्षाशास्त्र (30 प्रश्न)
-- बाल विकास (प्राथमिक विद्यालय बच्चा)
-- समावेशी शिक्षा की अवधारणा और विशेष आवश्यकताओं वाले बच्चों की समझ
-- सीखना और शिक्षाशास्त्र
-
-### भाषा I (30 प्रश्न)
-- भाषा समझ
-- भाषा विकास का शिक्षाशास्त्र
-
-### भाषा II (30 प्रश्न)
-- समझ
-- भाषा विकास का शिक्षाशास्त्र
-
-### गणित और विज्ञान (60 प्रश्न)
-- गणित (30 प्रश्न)
-- विज्ञान (30 प्रश्न)
-
-### सामाजिक अध्ययन/सामाजिक विज्ञान (60 प्रश्न)
-- सामाजिक अध्ययन (30 प्रश्न)
-- सामाजिक विज्ञान (30 प्रश्न)`
+### संबंधित विषय (उम्मीदवार द्वारा चुना गया कोई एक) (120 प्रश्न)
+- हिंदी: उन्नत व्याकरण, गद्य, कविता, नाटक
+- अंग्रेजी: साहित्य, व्याकरण, रचना, ध्वनि विज्ञान
+- गणित: समुच्चय, संबंध, फलन, कैलकुलस, सांख्यिकी, प्रायिकता
+- भौतिकी: यांत्रिकी, ऊष्मागतिकी, विद्युत चुंबकत्व, आधुनिक भौतिकी
+- रसायन विज्ञान: भौतिक रसायन, कार्बनिक रसायन, अकार्बनिक रसायन
+- जीव विज्ञान: आनुवंशिकी, पारिस्थितिकी, मानव शरीर विज्ञान, जैव प्रौद्योगिकी
+- वाणिज्य: लेखाशास्त्र, व्यवसाय अध्ययन, अर्थशास्त्र
+- सामाजिक विज्ञान: इतिहास, राजनीति विज्ञान, भूगोल, समाजशास्त्र
+- कंप्यूटर विज्ञान: प्रोग्रामिंग, नेटवर्किंग, डेटा संरचनाएं`,
     }
   })
 
@@ -459,98 +441,141 @@ async function main() {
   await prisma.ruleSet.createMany({
     skipDuplicates: true,
     data: [
+      // STET — Secondary (IX–X)
       {
-        name: 'STET-Secondary-2025',
+        name: 'STET-SECONDARY-DEFAULT',
         examKey: 'STET',
         level: 'SECONDARY',
         isActive: true,
         json: {
+          requireBed: true,
+          minDegree: 'BACHELOR',
+          subjectMustMatch: true,
+          allowIntegratedBed: true,
+          requireTet: false,
           age: {
             min: 21,
             max: 37,
             relaxations: [
-              { category: 'OBC', years: 3 },
-              { category: 'SC', years: 5 },
-              { category: 'ST', years: 5 }
-            ],
-            asOfDate: '2025-08-01'
-          },
-          education: {
-            required: [
-              {
-                anyOf: [
-                  { allOf: [{ field: 'graduation', op: '>=', value: 50 }] },
-                  { allOf: [{ field: 'postGraduation', op: '>=', value: 50 }] }
-                ]
-              }
-            ],
-            professional: [
-              {
-                anyOf: [
-                  { token: 'B.Ed' },
-                  { token: 'D.El.Ed', levelIn: ['PRIMARY', 'UPPER_PRIMARY'] }
-                ]
-              }
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
             ]
-          },
-          tet: {
-            required: true,
-            accepted: ['STET', 'CTET'],
-            subjectMustMatch: true,
-            validityYears: 7
-          },
-          attemptLimit: null,
-          domicile: { required: false },
-          output: {
-            eligibleMessageEn: 'Eligible for STET (Secondary – {subject})',
-            ineligibleMessageEn: 'Not eligible. See reasons below.'
           }
         }
       },
+      // STET — Senior Secondary (XI–XII)
       {
-        name: 'BPSC-Secondary-2025',
+        name: 'STET-SRSECONDARY-DEFAULT',
+        examKey: 'STET',
+        level: 'SR_SECONDARY',
+        isActive: true,
+        json: {
+          requireBed: true,
+          minDegree: 'MASTER',
+          subjectMustMatch: true,
+          allowIntegratedBed: true,
+          requireTet: false,
+          age: {
+            min: 21,
+            max: 37,
+            relaxations: [
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
+            ]
+          }
+        }
+      },
+      // BPSC Teacher — Primary (I–V)
+      {
+        name: 'BPSC-PRIMARY-DEFAULT',
+        examKey: 'BPSC_TEACHER',
+        level: 'PRIMARY',
+        isActive: true,
+        json: {
+          requireTet: true,
+          acceptedTet: ['CTET', 'STET'],
+          requireProfessional: ['D.El.Ed'],
+          requireBed: false,
+          minDegree: 'SENIOR_SECONDARY',
+          age: {
+            min: 18,
+            max: 37,
+            relaxations: [
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
+            ]
+          }
+        }
+      },
+      // BPSC Teacher — Upper Primary (VI–VIII)
+      {
+        name: 'BPSC-UPPERPRIMARY-DEFAULT',
+        examKey: 'BPSC_TEACHER',
+        level: 'UPPER_PRIMARY',
+        isActive: true,
+        json: {
+          requireTet: true,
+          acceptedTet: ['CTET', 'STET'],
+          requireProfessional: ['B.Ed', 'D.El.Ed'],
+          minDegree: 'BACHELOR',
+          subjectMustMatch: false,
+          age: {
+            min: 18,
+            max: 37,
+            relaxations: [
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
+            ]
+          }
+        }
+      },
+      // BPSC Teacher — Secondary (IX–X)
+      {
+        name: 'BPSC-SECONDARY-DEFAULT',
         examKey: 'BPSC_TEACHER',
         level: 'SECONDARY',
         isActive: true,
         json: {
+          requireTet: true,
+          acceptedTet: ['STET'],
+          requireProfessional: ['B.Ed'],
+          minDegree: 'BACHELOR',
+          subjectMustMatch: true,
           age: {
             min: 21,
             max: 37,
             relaxations: [
-              { category: 'OBC', years: 3 },
-              { category: 'SC', years: 5 },
-              { category: 'ST', years: 5 }
-            ],
-            asOfDate: '2025-08-01'
-          },
-          education: {
-            required: [
-              {
-                anyOf: [
-                  { allOf: [{ field: 'graduation', op: '>=', value: 50 }] },
-                  { allOf: [{ field: 'postGraduation', op: '>=', value: 50 }] }
-                ]
-              }
-            ],
-            professional: [
-              {
-                anyOf: [
-                  { token: 'B.Ed' }
-                ]
-              }
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
             ]
-          },
-          tet: {
-            required: true,
-            accepted: ['STET', 'CTET'],
-            subjectMustMatch: true,
-            validityYears: 7
-          },
-          attemptLimit: null,
-          domicile: { required: true },
-          output: {
-            eligibleMessageEn: 'Eligible for BPSC Teacher (Secondary – {subject})',
-            ineligibleMessageEn: 'Not eligible. See reasons below.'
+          }
+        }
+      },
+      // BPSC Teacher — Senior Secondary (XI–XII)
+      {
+        name: 'BPSC-SRSECONDARY-DEFAULT',
+        examKey: 'BPSC_TEACHER',
+        level: 'SR_SECONDARY',
+        isActive: true,
+        json: {
+          requireTet: true,
+          acceptedTet: ['STET'],
+          requireProfessional: ['B.Ed'],
+          minDegree: 'MASTER',
+          subjectMustMatch: true,
+          age: {
+            min: 21,
+            max: 37,
+            relaxations: [
+              { cat: 'OBC', y: 3 },
+              { cat: 'SC', y: 5 },
+              { cat: 'ST', y: 5 }
+            ]
           }
         }
       }

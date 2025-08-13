@@ -9,6 +9,7 @@
     "news": "समाचार और अपडेट",
     "resources": "संसाधन",
     "mockTests": "मॉक टेस्ट",
+    "search": "एआई खोज",
     "about": "हमारे बारे में",
     "contact": "संपर्क"
   },
@@ -40,6 +41,29 @@
     },
     "latestUpdates": {
       "title": "नवीनतम अपडेट"
+    },
+    "stats": {
+      "activeParticipants": "सक्रिय प्रतिभागी",
+      "userRating": "उपयोगकर्ता रेटिंग",
+      "testsTaken": "टेस्ट दिए गए",
+      "successRate": "सफलता दर"
+    },
+    "buttons": {
+      "learnMore": "और जानें",
+      "refresh": "रिफ्रेश",
+      "viewAllUpdates": "सभी नवीनतम अपडेट देखें",
+      "readFullArticle": "पूरा लेख पढ़ें",
+      "viewAllNews": "सभी समाचार देखें"
+    },
+    "footer": {
+      "description": "बिहार सरकारी शिक्षक भर्ती की आपकी पूरी गाइड।",
+      "quickLinks": "त्वरित लिंक",
+      "resources": "संसाधन",
+      "contact": "संपर्क",
+      "email": "ईमेल: info@bpscteacher.com",
+      "phone": "फोन: +91-XXXXXXXXXX",
+      "address": "पता: पटना, बिहार",
+      "copyright": "© 2024 बीपीएससी शिक्षक। सर्वाधिकार सुरक्षित।"
     }
   },
   "common": {

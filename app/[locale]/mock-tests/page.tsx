@@ -34,10 +34,10 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
     },
     {
       id: 2,
-      title: 'STET Paper I – Primary Level',
-      titleHi: 'एसटीईटी पेपर I – प्राथमिक स्तर',
-      description: 'Mock test for STET Paper I covering Primary level (Classes I-V) topics.',
-      descriptionHi: 'प्राथमिक स्तर (कक्षा I-V) के लिए एसटीईटी पेपर I का मॉक टेस्ट।',
+      title: 'STET Paper I – Classes 9-10',
+      titleHi: 'एसटीईटी पेपर I – कक्षा 9-10',
+      description: 'Mock test for STET Paper I covering Classes 9-10 level topics.',
+      descriptionHi: 'कक्षा 9-10 स्तर के लिए एसटीईटी पेपर I का मॉक टेस्ट।',
       duration: 9000, // 2.5 hours
       questions: 150,
       negativeMarking: 0,
@@ -46,14 +46,14 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
       rating: 4.6,
       isFeatured: false,
       exam: 'STET',
-      subject: 'Primary'
+      subject: 'Classes 9-10'
     },
     {
       id: 3,
-      title: 'STET Paper II – Upper Primary',
-      titleHi: 'एसटीईटी पेपर II – उच्च प्राथमिक',
-      description: 'Mock test for STET Paper II covering Upper Primary level (Classes VI-VIII) topics.',
-      descriptionHi: 'उच्च प्राथमिक स्तर (कक्षा VI-VIII) के लिए एसटीईटी पेपर II का मॉक टेस्ट।',
+      title: 'STET Paper II – Classes 11-12',
+      titleHi: 'एसटीईटी पेपर II – कक्षा 11-12',
+      description: 'Mock test for STET Paper II covering Classes 11-12 level topics.',
+      descriptionHi: 'कक्षा 11-12 स्तर के लिए एसटीईटी पेपर II का मॉक टेस्ट।',
       duration: 9000, // 2.5 hours
       questions: 150,
       negativeMarking: 0,
@@ -62,7 +62,7 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
       rating: 4.7,
       isFeatured: false,
       exam: 'STET',
-      subject: 'Upper Primary'
+      subject: 'Classes 11-12'
     },
     {
       id: 4,
@@ -160,7 +160,7 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
                 </div>
                 <div className="flex space-x-3">
                   <Button size="lg" className="bg-bpsc-600 hover:bg-bpsc-700" asChild>
-                    <Link href={`/mock-tests/${test.id}`}>
+                    <Link href={`/${locale}/mock-tests/${test.id}`}>
                       <Play className="w-4 h-4 mr-2" />
                       Start Test
                     </Link>
@@ -218,7 +218,7 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
                     </div>
                   </div>
                   <Button className="w-full" asChild>
-                    <Link href={`/mock-tests/${test.id}`}>
+                    <Link href={`/${locale}/mock-tests/${test.id}`}>
                       <Play className="w-4 h-4 mr-2" />
                       Start Test
                     </Link>
