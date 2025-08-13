@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
 
+// Force dynamic rendering to prevent build-time database connection
+export const dynamic = 'force-dynamic'
+
 interface EligibilityForm {
   examToCheck: 'STET' | 'BPSC Teacher'
   dateOfBirth: string
