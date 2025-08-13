@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db'
 
 // Force dynamic rendering to prevent build-time database connection
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 // Rate limiting store (in production, use Redis or similar)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
@@ -150,6 +151,9 @@ Technical Details:
 
 export async function POST(request: NextRequest) {
   try {
+    // Clean up expired rate limit entries
+    cleanupRateLimitStore()
+    
     const clientIP = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
     
     // Check rate limiting
@@ -227,12 +231,12 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Clean up rate limit store periodically (in production, use Redis TTL)
-setInterval(() => {
+// Clean up rate limit store on each request (simpler approach for serverless)
+function cleanupRateLimitStore() {
   const now = Date.now()
   Array.from(rateLimitStore.entries()).forEach(([key, data]) => {
     if (now > data.resetTime) {
       rateLimitStore.delete(key)
     }
   })
-}, 1000 * 60 * 5) // Clean up every 5 minutes
+}

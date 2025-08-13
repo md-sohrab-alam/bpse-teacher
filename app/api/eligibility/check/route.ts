@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db'
 
 // Force dynamic rendering to prevent build-time database connection
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 interface EligibilityForm {
   examToCheck: 'STET' | 'BPSC Teacher'
