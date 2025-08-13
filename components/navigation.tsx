@@ -7,6 +7,7 @@ import { Menu, X, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
+import { trackLanguageSwitch } from '@/lib/gtag'
 
 interface NavigationProps {
   locale: string
@@ -43,6 +44,7 @@ export function Navigation({ locale }: NavigationProps) {
     { href: `/${locale}/eligibility?tab=cutoff`, label: t('cutoff') },
     { href: `/${locale}/news`, label: t('news') },
     { href: `/${locale}/search`, label: t('search') },
+    { href: `/${locale}/contact`, label: t('contact') },
   ]
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -84,6 +86,7 @@ export function Navigation({ locale }: NavigationProps) {
             <div className="hidden md:block">
               <Link
                 href={getLanguageToggleUrl()}
+                onClick={() => trackLanguageSwitch(locale === 'en' ? 'hindi' : 'english')}
                 className="flex items-center text-gray-700 hover:text-bpsc-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 <Globe className="w-4 h-4 mr-1" />

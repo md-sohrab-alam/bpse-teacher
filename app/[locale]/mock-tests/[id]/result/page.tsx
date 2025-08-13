@@ -246,12 +246,10 @@ export default function ResultPage({ params: { locale, id } }: ResultPageProps) 
 
   const downloadResult = () => {
     // Implementation for PDF download
-    console.log('Downloading result...')
   }
 
   const shareResult = () => {
     // Implementation for sharing result
-    console.log('Sharing result...')
   }
 
   if (isLoading) {

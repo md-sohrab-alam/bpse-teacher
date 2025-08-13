@@ -74,6 +74,378 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
         'Computer Networks',
         'Operating Systems'
       ]
+    },
+    {
+      id: '2',
+      title: 'BPSC Computer Teacher – Model Set 2',
+      titleHi: 'बीपीएससी कंप्यूटर शिक्षक – मॉडल सेट 2',
+      description: 'Second comprehensive mock test for BPSC Computer Teacher recruitment.',
+      descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए दूसरा व्यापक मॉक टेस्ट।',
+      duration: 7200,
+      questions: 120,
+      negativeMarking: 0.25,
+      difficulty: 'Medium',
+      attempts: 980,
+      rating: 4.7,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 120 questions',
+        'Time duration: 2 hours',
+        'Negative marking: 0.25 marks per wrong answer',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Computer Fundamentals',
+        'Programming Concepts',
+        'Database Management',
+        'Web Technologies',
+        'Computer Networks',
+        'Operating Systems'
+      ]
+    },
+    {
+      id: '3',
+      title: 'BPSC Computer Teacher – Model Set 3',
+      titleHi: 'बीपीएससी कंप्यूटर शिक्षक – मॉडल सेट 3',
+      description: 'Third comprehensive mock test for BPSC Computer Teacher recruitment.',
+      descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए तीसरा व्यापक मॉक टेस्ट।',
+      duration: 7200,
+      questions: 120,
+      negativeMarking: 0.25,
+      difficulty: 'Medium',
+      attempts: 756,
+      rating: 4.6,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 120 questions',
+        'Time duration: 2 hours',
+        'Negative marking: 0.25 marks per wrong answer',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Computer Fundamentals',
+        'Programming Concepts',
+        'Database Management',
+        'Web Technologies',
+        'Computer Networks',
+        'Operating Systems'
+      ]
+    },
+    {
+      id: '4',
+      title: 'BPSC Computer Teacher – Model Set 4',
+      titleHi: 'बीपीएससी कंप्यूटर शिक्षक – मॉडल सेट 4',
+      description: 'Fourth comprehensive mock test for BPSC Computer Teacher recruitment.',
+      descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए चौथा व्यापक मॉक टेस्ट।',
+      duration: 7200,
+      questions: 120,
+      negativeMarking: 0.25,
+      difficulty: 'Medium',
+      attempts: 654,
+      rating: 4.5,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 120 questions',
+        'Time duration: 2 hours',
+        'Negative marking: 0.25 marks per wrong answer',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Computer Fundamentals',
+        'Programming Concepts',
+        'Database Management',
+        'Web Technologies',
+        'Computer Networks',
+        'Operating Systems'
+      ]
+    },
+    {
+      id: '5',
+      title: 'BPSC Computer Teacher – Model Set 5',
+      titleHi: 'बीपीएससी कंप्यूटर शिक्षक – मॉडल सेट 5',
+      description: 'Fifth comprehensive mock test for BPSC Computer Teacher recruitment.',
+      descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए पांचवां व्यापक मॉक टेस्ट।',
+      duration: 7200,
+      questions: 120,
+      negativeMarking: 0.25,
+      difficulty: 'Medium',
+      attempts: 543,
+      rating: 4.4,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 120 questions',
+        'Time duration: 2 hours',
+        'Negative marking: 0.25 marks per wrong answer',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Computer Fundamentals',
+        'Programming Concepts',
+        'Database Management',
+        'Web Technologies',
+        'Computer Networks',
+        'Operating Systems'
+      ]
+    },
+    {
+      id: '6',
+      title: 'BPSC Mathematics Teacher – Model Set 1',
+      titleHi: 'बीपीएससी गणित शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Mathematics Teacher recruitment with 120 questions.',
+      descriptionHi: 'बीपीएससी गणित शिक्षक भर्ती के लिए 120 प्रश्नों के साथ व्यापक मॉक टेस्ट।',
+      duration: 7200,
+      questions: 120,
+      negativeMarking: 0.25,
+      difficulty: 'Hard',
+      attempts: 432,
+      rating: 4.9,
+      isFeatured: true,
+      exam: 'BPSC Teacher',
+      subject: 'Mathematics',
+      instructions: [
+        'This test contains 120 questions',
+        'Time duration: 2 hours',
+        'Negative marking: 0.25 marks per wrong answer',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Algebra',
+        'Geometry',
+        'Trigonometry',
+        'Calculus',
+        'Statistics',
+        'Number Theory'
+      ]
+    },
+    {
+      id: '7',
+      title: 'STET Computer Science – Model Set 1',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 1',
+      description: 'Mock test for STET Computer Science covering advanced topics.',
+      descriptionHi: 'उन्नत विषयों को कवर करने वाला एसटीईटी कंप्यूटर साइंस का मॉक टेस्ट।',
+      duration: 9000, // 2.5 hours
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 345,
+      rating: 4.8,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '8',
+      title: 'STET Computer Science – Model Set 2',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 2',
+      description: 'Second mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का दूसरा मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 298,
+      rating: 4.7,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '9',
+      title: 'STET Computer Science – Model Set 3',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 3',
+      description: 'Third mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का तीसरा मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 267,
+      rating: 4.6,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '10',
+      title: 'STET Computer Science – Model Set 4',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 4',
+      description: 'Fourth mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का चौथा मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 234,
+      rating: 4.5,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '11',
+      title: 'STET Computer Science – Model Set 5',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 5',
+      description: 'Fifth mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का पांचवां मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 198,
+      rating: 4.4,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '12',
+      title: 'STET Computer Science – Model Set 6',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 6',
+      description: 'Sixth mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का छठा मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 167,
+      rating: 4.3,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
+    },
+    {
+      id: '13',
+      title: 'STET Computer Science – Model Set 7',
+      titleHi: 'एसटीईटी कंप्यूटर साइंस – मॉडल सेट 7',
+      description: 'Seventh mock test for STET Computer Science.',
+      descriptionHi: 'एसटीईटी कंप्यूटर साइंस का सातवां मॉक टेस्ट।',
+      duration: 9000,
+      questions: 150,
+      negativeMarking: 0,
+      difficulty: 'Hard',
+      attempts: 145,
+      rating: 4.2,
+      isFeatured: false,
+      exam: 'STET',
+      subject: 'Computer Science',
+      instructions: [
+        'This test contains 150 questions',
+        'Time duration: 2.5 hours',
+        'No negative marking',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Advanced Programming',
+        'Data Structures',
+        'Algorithms',
+        'Computer Architecture',
+        'Software Engineering',
+        'Database Systems'
+      ]
     }
   ]
 

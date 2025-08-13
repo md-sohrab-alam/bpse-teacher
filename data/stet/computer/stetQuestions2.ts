@@ -1,5 +1,5 @@
 // stetQuestions2: Questions 11–20
-const stetQuestions2 = [
+export const stetQuestions2 = [
   {
     textEn: "Which component of an ideal microcomputer is responsible for temporarily holding data and instructions during processing?",
     textHi: "आदर्श माइक्रोकंप्यूटर में प्रसंस्करण के दौरान डेटा और निर्देशों को अस्थायी रूप से रखने के लिए कौन-सा घटक उत्तरदायी है?",

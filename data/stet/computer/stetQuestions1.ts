@@ -1,4 +1,4 @@
-const stetQuestions1 = [
+export const stetQuestions1 = [
   { 
     textEn: "What is the simplified expression for the Boolean function F(A, B, C, D) = Σ(0, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14) using the K-map method?",
     textHi: "K-map विधि का उपयोग करते हुए F(A, B, C, D) = Σ(0, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14) का सरलीकृत व्यंजक क्या है?",

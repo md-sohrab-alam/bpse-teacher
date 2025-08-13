@@ -221,3 +221,19 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String   @default("")
+  message   String
+  category  String
+  ipAddress String
+  userAgent String
+  locale    String
+  isSpam    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_submissions")
+}

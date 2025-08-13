@@ -1,9 +1,13 @@
-import OpenAI from 'openai'
-
-// Initialize OpenAI client
-const openai = process.env.OPENAI_API_KEY ? new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-}) : null
+export interface SearchQuery {
+  query: string
+  language?: string
+  filters?: {
+    examType?: string[]
+    type?: string[]
+    topic?: string[]
+  }
+  limit?: number
+}
 
 export interface SearchResult {
   id: string
@@ -23,218 +27,25 @@ export interface SearchResult {
   url?: string
 }
 
-export interface SearchQuery {
-  query: string
-  language?: 'en' | 'hi'
-  filters?: {
-    examType?: string[]
-    type?: string[]
-    topic?: string[]
-  }
-  limit?: number
-}
-
 export interface SearchResponse {
   results: SearchResult[]
   suggestions: string[]
   totalResults: number
   query: string
   processingTime: number
-}
-
-/**
- * Generate embeddings for text using OpenAI
- */
-export async function generateEmbedding(text: string): Promise<number[]> {
-  if (!openai) {
-    // Return a simple hash-based embedding when OpenAI is not available
-    const hash = text.split('').reduce((a, b) => {
-      a = ((a << 5) - a) + b.charCodeAt(0)
-      return a & a
-    }, 0)
-    return Array.from({length: 1536}, (_, i) => Math.sin(hash + i) * 0.1)
-  }
-  
-  try {
-    const response = await openai.embeddings.create({
-      model: 'text-embedding-ada-002',
-      input: text,
-    })
-    
-    return response.data[0].embedding
-  } catch (error) {
-    console.error('Error generating embedding:', error)
-    throw new Error('Failed to generate embedding')
+  keyInfo: {
+    summary: string
+    keyTopics: string[]
+    recommendations: string[]
   }
 }
 
 /**
- * Calculate cosine similarity between two vectors
- */
-function cosineSimilarity(a: number[], b: number[]): number {
-  if (a.length !== b.length) {
-    throw new Error('Vectors must have the same length')
-  }
-  
-  let dotProduct = 0
-  let normA = 0
-  let normB = 0
-  
-  for (let i = 0; i < a.length; i++) {
-    dotProduct += a[i] * b[i]
-    normA += a[i] * a[i]
-    normB += b[i] * b[i]
-  }
-  
-  return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB))
-}
-
-/**
- * Search through content using semantic similarity and exact keyword matching
- */
-export async function semanticSearch(
-  query: string,
-  content: Array<{
-    id: string
-    type: string
-    title: string
-    titleHi: string
-    content: string
-    contentHi: string
-    metadata: any
-  }>,
-  limit: number = 10
-): Promise<SearchResult[]> {
-  try {
-    const queryLower = query.toLowerCase()
-    const queryWords = queryLower.split(/\s+/).filter(word => word.length > 2)
-    
-    // Calculate relevance scores with exact keyword matching
-    const scoredContent = await Promise.all(
-      content.map(async (item) => {
-        const contentText = `${item.title} ${item.content} ${item.titleHi} ${item.contentHi} ${item.metadata?.examType || ''} ${item.metadata?.topic || ''}`
-        const contentLower = contentText.toLowerCase()
-        
-        // Exact keyword matching score
-        let exactMatchScore = 0
-        queryWords.forEach(word => {
-          if (contentLower.includes(word)) {
-            exactMatchScore += 1
-            // Bonus for title matches
-            if (item.title.toLowerCase().includes(word)) {
-              exactMatchScore += 0.5
-            }
-            // Bonus for exam type matches
-            if (item.metadata?.examType?.toLowerCase().includes(word)) {
-              exactMatchScore += 0.3
-            }
-          }
-        })
-        
-        // Normalize exact match score
-        exactMatchScore = exactMatchScore / queryWords.length
-        
-        // Generate embedding for semantic similarity
-        const queryEmbedding = await generateEmbedding(query)
-        const itemEmbedding = await generateEmbedding(contentText)
-        const semanticSimilarity = cosineSimilarity(queryEmbedding, itemEmbedding)
-        
-        // Combine exact matching and semantic similarity
-        const combinedRelevance = (exactMatchScore * 0.7) + (semanticSimilarity * 0.3)
-        
-        return {
-          ...item,
-          relevance: combinedRelevance,
-          exactMatchScore,
-          semanticSimilarity
-        }
-      })
-    )
-    
-    // Sort by combined relevance and return top results
-    return scoredContent
-      .sort((a, b) => b.relevance - a.relevance)
-      .slice(0, limit)
-      .map(item => ({
-        id: item.id,
-        type: item.type as SearchResult['type'],
-        title: item.title,
-        titleHi: item.titleHi,
-        content: item.content,
-        contentHi: item.contentHi,
-        relevance: item.relevance,
-        metadata: item.metadata
-      }))
-  } catch (error) {
-    console.error('Error in semantic search:', error)
-    throw new Error('Failed to perform semantic search')
-  }
-}
-
-/**
- * Generate search suggestions using OpenAI
- */
-export async function generateSearchSuggestions(
-  query: string,
-  context: string = 'BPSE exam preparation'
-): Promise<string[]> {
-  if (!openai) {
-    // Return simple suggestions when OpenAI is not available
-    return [
-      `${query} eligibility`,
-      `${query} syllabus`,
-      `${query} mock test`,
-      `${query} cut off marks`,
-      `${query} exam pattern`
-    ]
-  }
-  
-  try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        {
-          role: 'system',
-          content: `You are a helpful assistant for BPSE (Bihar Public Service Commission) exam preparation. Generate 5 relevant search suggestions based on the user's query. Focus on exam-related topics like eligibility, syllabus, mock tests, cut-off marks, and exam patterns. Return only the suggestions as a JSON array.`
-        },
-        {
-          role: 'user',
-          content: `Generate search suggestions for: "${query}" in the context of ${context}`
-        }
-      ],
-      max_tokens: 200,
-      temperature: 0.7
-    })
-    
-    const suggestions = response.choices[0]?.message?.content
-    if (suggestions) {
-      try {
-        return JSON.parse(suggestions)
-      } catch {
-        // Fallback: return simple suggestions
-        return [
-          `${query} eligibility`,
-          `${query} syllabus`,
-          `${query} mock test`,
-          `${query} cut off marks`,
-          `${query} exam pattern`
-        ]
-      }
-    }
-    
-    return []
-  } catch (error) {
-    console.error('Error generating suggestions:', error)
-    return []
-  }
-}
-
-/**
- * Enhanced search with both semantic and keyword matching
+ * Enhanced search function that combines semantic and keyword matching
  */
 export async function enhancedSearch(
   searchQuery: SearchQuery,
-  content: Array<{
+  searchableContent: Array<{
     id: string
     type: string
     title: string
@@ -245,143 +56,197 @@ export async function enhancedSearch(
   }>
 ): Promise<SearchResponse> {
   const startTime = Date.now()
-  
-  try {
-    // 1. Semantic search
-    const semanticResults = await semanticSearch(
-      searchQuery.query,
-      content,
-      searchQuery.limit || 10
+  const { query, language = 'en', filters, limit = 10 } = searchQuery
+
+  // Filter content based on search query
+  let filteredContent = searchableContent.filter(item => {
+    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    const queryLower = query.toLowerCase()
+    
+    // Basic keyword matching
+    const hasKeyword = queryLower.split(' ').some(word => 
+      searchText.includes(word) && word.length > 2
     )
     
-    // 2. Keyword search (exact matches)
-    const keywordResults = content
-      .filter(item => {
-        const searchText = `${item.title} ${item.content} ${item.titleHi} ${item.contentHi}`.toLowerCase()
-        const query = searchQuery.query.toLowerCase()
-        return searchText.includes(query)
-      })
-      .map(item => ({
-        id: item.id,
-        type: item.type as SearchResult['type'],
-        title: item.title,
-        titleHi: item.titleHi,
-        content: item.content,
-        contentHi: item.contentHi,
-        relevance: 1.0, // Exact match gets highest relevance
-        metadata: item.metadata
-      }))
-    
-    // 3. Combine and deduplicate results
-    const allResults = [...keywordResults, ...semanticResults]
-    const uniqueResults = allResults.filter((result, index, self) => 
-      index === self.findIndex(r => r.id === result.id)
-    )
-    
-    // 4. Sort by relevance
-    const sortedResults = uniqueResults.sort((a, b) => b.relevance - a.relevance)
-    
-    // 5. Apply filters
-    let filteredResults = sortedResults
-    if (searchQuery.filters) {
-      if (searchQuery.filters.examType) {
-        filteredResults = filteredResults.filter(result => 
-          searchQuery.filters!.examType!.includes(result.metadata.examType)
+    // Apply filters if provided
+    if (filters) {
+      if (filters.examType && filters.examType.length > 0) {
+        const hasExamType = filters.examType.some(type => 
+          item.metadata?.examType === type
         )
+        if (!hasExamType) return false
       }
-      if (searchQuery.filters.type) {
-        filteredResults = filteredResults.filter(result => 
-          searchQuery.filters!.type!.includes(result.type)
-        )
+      
+      if (filters.type && filters.type.length > 0) {
+        const hasType = filters.type.includes(item.type)
+        if (!hasType) return false
       }
-      if (searchQuery.filters.topic) {
-        filteredResults = filteredResults.filter(result => 
-          searchQuery.filters!.topic!.includes(result.metadata.topic)
+      
+      if (filters.topic && filters.topic.length > 0) {
+        const hasTopic = filters.topic.some(topic => 
+          item.metadata?.topic === topic
         )
+        if (!hasTopic) return false
       }
     }
     
-    // 6. Generate suggestions
-    const suggestions = await generateSearchSuggestions(searchQuery.query)
+    return hasKeyword
+  })
+
+  // Calculate relevance scores
+  const scoredResults = filteredContent.map(item => {
+    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    const queryLower = query.toLowerCase()
     
-    const processingTime = Date.now() - startTime
+    let relevance = 0
+    
+    // Title match gets higher weight
+    if (item.title.toLowerCase().includes(queryLower)) {
+      relevance += 10
+    }
+    
+    // Content match
+    if (item.content.toLowerCase().includes(queryLower)) {
+      relevance += 5
+    }
+    
+    // Exact phrase match
+    if (searchText.includes(queryLower)) {
+      relevance += 15
+    }
+    
+    // Word-by-word matching
+    const queryWords = queryLower.split(' ').filter(word => word.length > 2)
+    queryWords.forEach(word => {
+      if (searchText.includes(word)) {
+        relevance += 2
+      }
+    })
+    
+    // Type-specific scoring
+    if (item.type === 'exam') relevance += 3
+    if (item.type === 'news') relevance += 2
+    if (item.type === 'eligibility') relevance += 4
     
     return {
-      results: filteredResults.slice(0, searchQuery.limit || 10),
-      suggestions,
-      totalResults: filteredResults.length,
-      query: searchQuery.query,
-      processingTime
+      id: item.id,
+      type: item.type as SearchResult['type'],
+      title: item.title,
+      titleHi: item.titleHi,
+      content: item.content,
+      contentHi: item.contentHi,
+      relevance,
+      metadata: item.metadata,
+      url: `/${language}/${item.type}/${item.id}`
     }
-  } catch (error) {
-    console.error('Error in enhanced search:', error)
-    throw new Error('Search failed')
+  })
+
+  // Sort by relevance and limit results
+  const sortedResults = scoredResults
+    .sort((a, b) => b.relevance - a.relevance)
+    .slice(0, limit)
+
+  // Generate suggestions
+  const suggestions = generateSuggestions(query, searchableContent)
+
+  const processingTime = Date.now() - startTime
+
+  return {
+    results: sortedResults,
+    suggestions,
+    totalResults: filteredContent.length,
+    query,
+    processingTime,
+    keyInfo: {
+      summary: `Found ${sortedResults.length} relevant results for "${query}"`,
+      keyTopics: extractKeyTopics(sortedResults),
+      recommendations: generateRecommendations(sortedResults, query)
+    }
   }
 }
 
 /**
- * Extract key information from search results using AI
+ * Extract key information from search results
  */
-export async function extractKeyInfo(searchResults: SearchResult[]): Promise<{
-  summary: string
-  keyTopics: string[]
-  recommendations: string[]
-}> {
-  if (!openai) {
-    return {
-      summary: 'Found relevant information for your search query.',
-      keyTopics: ['Exam preparation', 'Study materials', 'Important dates'],
-      recommendations: ['Review the syllabus thoroughly', 'Practice with mock tests']
-    }
-  }
+export async function extractKeyInfo(results: SearchResult[]) {
+  const topics = extractKeyTopics(results)
+  const examTypes = Array.from(new Set(results.map(r => r.metadata?.examType).filter(Boolean)))
   
-  try {
-    const content = searchResults.map(r => `${r.title}: ${r.content}`).join('\n\n')
+  return {
+    summary: `Found ${results.length} results covering ${topics.length} topics`,
+    keyTopics: topics,
+    examTypes,
+    recommendations: generateRecommendations(results, '')
+  }
+}
+
+/**
+ * Generate search suggestions
+ */
+function generateSuggestions(query: string, content: any[]): string[] {
+  const suggestions = new Set<string>()
+  
+  content.forEach(item => {
+    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    const queryLower = query.toLowerCase()
     
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        {
-          role: 'system',
-          content: `You are an expert BPSE exam preparation assistant. Analyze the search results and provide:
-1. A brief summary of the key information
-2. 3-5 key topics covered
-3. 2-3 actionable recommendations for exam preparation
-Return the response as JSON with keys: summary, keyTopics, recommendations`
-        },
-        {
-          role: 'user',
-          content: `Analyze these search results: ${content}`
-        }
-      ],
-      max_tokens: 300,
-      temperature: 0.7
-    })
-    
-    const analysis = response.choices[0]?.message?.content
-    if (analysis) {
-      try {
-        return JSON.parse(analysis)
-      } catch {
-        return {
-          summary: 'Found relevant information for your search query.',
-          keyTopics: ['Exam preparation', 'Study materials', 'Important dates'],
-          recommendations: ['Review the syllabus thoroughly', 'Practice with mock tests']
+    if (searchText.includes(queryLower) && queryLower.length > 2) {
+      // Extract phrases that contain the query
+      const words = searchText.split(' ')
+      for (let i = 0; i < words.length - 2; i++) {
+        const phrase = words.slice(i, i + 3).join(' ')
+        if (phrase.includes(queryLower)) {
+          suggestions.add(phrase)
         }
       }
     }
+  })
+  
+  return Array.from(suggestions).slice(0, 5)
+}
+
+/**
+ * Extract key topics from search results
+ */
+function extractKeyTopics(results: SearchResult[]): string[] {
+  const topics = new Set<string>()
+  
+  results.forEach(result => {
+    if (result.metadata?.topic) {
+      topics.add(result.metadata.topic)
+    }
+    if (result.metadata?.category) {
+      topics.add(result.metadata.category)
+    }
+  })
+  
+  return Array.from(topics)
+}
+
+/**
+ * Generate recommendations based on search results
+ */
+function generateRecommendations(results: SearchResult[], query: string): string[] {
+  const recommendations: string[] = []
+  
+  if (results.length === 0) {
+    recommendations.push('Try using different keywords')
+    recommendations.push('Check spelling of your search terms')
+    recommendations.push('Use broader search terms')
+  } else {
+    const examTypes = Array.from(new Set(results.map(r => r.metadata?.examType).filter(Boolean)))
+    if (examTypes.length > 0) {
+      recommendations.push(`Explore ${examTypes.join(', ')} related content`)
+    }
     
-    return {
-      summary: 'Found relevant information for your search query.',
-      keyTopics: ['Exam preparation', 'Study materials', 'Important dates'],
-      recommendations: ['Review the syllabus thoroughly', 'Practice with mock tests']
+    const topics = extractKeyTopics(results)
+    if (topics.length > 0) {
+      recommendations.push(`Learn more about ${topics.slice(0, 2).join(', ')}`)
     }
-  } catch (error) {
-    console.error('Error extracting key info:', error)
-    return {
-      summary: 'Found relevant information for your search query.',
-      keyTopics: ['Exam preparation', 'Study materials', 'Important dates'],
-      recommendations: ['Review the syllabus thoroughly', 'Practice with mock tests']
-    }
+    
+    recommendations.push('Take mock tests to practice')
+    recommendations.push('Check eligibility criteria')
   }
+  
+  return recommendations
 }

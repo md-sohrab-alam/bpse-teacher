@@ -79,6 +79,20 @@
 /* Hindi font support */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
 
+/* Hide React error overlay */
+#__next-build-watcher,
+#__next-prerender-indicator,
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast] {
+  display: none !important;
+}
+
+/* Hide any error overlays in development */
+iframe[src*="webpack-dev-server"],
+iframe[src*="__webpack_dev_server__"] {
+  display: none !important;
+}
+
 .hindi {
   font-family: 'Noto Sans Devanagari', sans-serif;
 }

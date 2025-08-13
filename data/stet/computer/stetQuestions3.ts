@@ -1,5 +1,5 @@
 // stetQuestions3: Questions 51–60
-const stetQuestions3 = [
+export const stetQuestions3 = [
   {
     textEn: "Which testing approach involves testing individual components or units of code?",
     textHi: "कौन-सा परीक्षण दृष्टिकोण कोड के व्यक्तिगत घटकों/यूनिट का परीक्षण करता है?",

@@ -21,31 +21,13 @@ import {
   Square
 } from 'lucide-react'
 import Link from 'next/link'
+import { loadQuestionsBySet, Question } from '@/lib/question-loader'
 
 interface TestPageProps {
   params: { locale: string; id: string }
 }
 
-interface Question {
-  id: string
-  text: string
-  textHi: string
-  options: {
-    A: string
-    B: string
-    C: string
-    D: string
-  }
-  optionsHi: {
-    A: string
-    B: string
-    C: string
-    D: string
-  }
-  correctAnswer: 'A' | 'B' | 'C' | 'D'
-  explanation?: string
-  explanationHi?: string
-}
+
 
 interface TestState {
   currentQuestion: number
@@ -130,36 +112,47 @@ export default function TestPage({ params: { locale, id } }: TestPageProps) {
   ]
 
   useEffect(() => {
-    // Load questions from your model paper generation system
-    const loadQuestions = async () => {
+    // Load questions based on test ID
+    const loadQuestions = () => {
       setIsLoading(true)
       try {
-        // Call your model paper generation API
-        const response = await fetch('/api/model-paper/generate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            testId: id,
-            subject: 'Computer Science',
-            questionCount: 120
-          })
-        })
-        
-        if (!response.ok) {
-          throw new Error('Failed to load questions')
+        // Map test ID to question set
+        const questionSetMap: Record<string, string> = {
+          '1': 'computer-science-1',
+          '2': 'computer-science-2',
+          '3': 'computer-science-3',
+          '4': 'computer-science-4',
+          '5': 'computer-science-5',
+          '6': 'math-1',
+          '7': 'stet-computer-1',
+          '8': 'stet-computer-2',
+          '9': 'stet-computer-3',
+          '10': 'stet-computer-4',
+          '11': 'stet-computer-5',
+          '12': 'stet-computer-6',
+          '13': 'stet-computer-7'
         }
+
+        const questionSet = questionSetMap[id]
+        if (!questionSet) {
+          console.error(`No question set found for test ID: ${id}`)
+          setQuestions(mockQuestions)
+          return
+        }
+
+        // Load questions from the question set
+        const loadedQuestions = loadQuestionsBySet(questionSet)
+        setQuestions(loadedQuestions)
         
-        const data = await response.json()
-        setQuestions(data.questions)
+        // Set appropriate duration based on test type
+        const duration = questionSet.startsWith('stet') ? 9000 : 7200
         setTestState(prev => ({
           ...prev,
-          timeRemaining: data.duration || 7200
+          timeRemaining: duration
         }))
       } catch (error) {
         console.error('Error loading questions:', error)
-        // Fallback to mock questions if API fails
+        // Fallback to mock questions if loading fails
         setQuestions(mockQuestions)
       } finally {
         setIsLoading(false)

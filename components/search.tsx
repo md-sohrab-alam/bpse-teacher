@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useTranslations } from 'next-intl'
+import { trackSearch } from '@/lib/gtag'
 
 interface SearchResult {
   id: string
@@ -166,6 +167,8 @@ export function Search({
     e.preventDefault()
     // Redirect to AI agent results page
     if (query.trim()) {
+      // Track search event
+      trackSearch(query.trim())
       setIsRedirecting(true)
       const agentUrl = `/${locale}/agent-results?q=${encodeURIComponent(query.trim())}`
       window.location.href = agentUrl
@@ -175,6 +178,8 @@ export function Search({
   const handleSuggestionClick = (suggestion: string) => {
     setQuery(suggestion)
     setShowSuggestions(false)
+    // Track search event
+    trackSearch(suggestion)
     setIsRedirecting(true)
     // Redirect to AI agent results page
     const agentUrl = `/${locale}/agent-results?q=${encodeURIComponent(suggestion)}`

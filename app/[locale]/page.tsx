@@ -114,7 +114,6 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
                 showFilters={false}
                 onResultClick={(result) => {
                   // Handle search result clicks
-                  console.log('Search result clicked:', result)
                   // You can add navigation logic here based on result type
                 }}
               />

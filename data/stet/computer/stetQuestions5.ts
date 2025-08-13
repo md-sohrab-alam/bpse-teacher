@@ -1,5 +1,5 @@
 // stetQuestions5: Questions 41–50
-const stetQuestions5 = [
+export const stetQuestions5 = [
   {
     textEn: "What is the primary function of routing in the network layer?",
     textHi: "नेटवर्क लेयर में रूटिंग का प्राथमिक कार्य क्या है?",

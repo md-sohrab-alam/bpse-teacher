@@ -1,5 +1,5 @@
 // stetQuestions4: Questions 31–40
-const stetQuestions4 = [
+export const stetQuestions4 = [
   {
     textEn: "The primary goal of load control is to:",
     textHi: "लोड नियंत्रण का प्राथमिक उद्देश्य है:",

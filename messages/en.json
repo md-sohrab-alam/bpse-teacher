@@ -172,5 +172,64 @@
     "mockTests": "Mock Tests",
     "users": "Users",
     "ruleSets": "Rule Sets"
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageDescription": "Have questions, feedback, or need assistance? We're here to help you with your BPSC Teacher exam preparation journey.",
+    "title": "Send us a message",
+    "description": "Fill out the form below and we'll get back to you as soon as possible.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "categories": {
+      "general": "General Inquiry",
+      "technical": "Technical Support",
+      "feedback": "Feedback",
+      "bug": "Bug Report",
+      "suggestion": "Suggestion"
+    },
+    "subject": "Subject",
+    "subjectPlaceholder": "Brief subject of your message",
+    "message": "Message",
+    "messagePlaceholder": "Tell us how we can help you...",
+    "characters": "characters",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "alternativeContact": "Alternative Contact Methods",
+    "emailUs": "Email us at",
+    "emailPlaceholder": "contact@bpseteacher.com",
+    "whatsapp": "WhatsApp",
+    "phonePlaceholder": "+91 98995 39767",
+    "quickContact": "Quick Contact",
+    "responseTime": {
+      "title": "Response Time",
+      "weekdays": "Weekdays (Mon-Fri)",
+      "weekdaysTime": "24 hours",
+      "weekends": "Weekends",
+      "weekendsTime": "48 hours",
+      "urgent": "Urgent queries",
+      "urgentTime": "2-4 hours"
+    },
+    "security": {
+      "title": "Security & Privacy",
+      "description": "Your information is protected with industry-standard security measures.",
+      "features": {
+        "encryption": "End-to-end encryption",
+        "spam": "Advanced spam protection",
+        "privacy": "Your data is never shared",
+        "rateLimit": "Rate limiting to prevent abuse"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How quickly will you respond?",
+      "a1": "We typically respond within 24 hours on weekdays and 48 hours on weekends.",
+      "q2": "Is my information secure?",
+      "a2": "Yes, we use industry-standard encryption and never share your personal information.",
+      "q3": "Can I contact you via WhatsApp?",
+      "a3": "Yes, you can reach us on WhatsApp at +91 98995 39767 for urgent queries."
+    }
   }
 }
