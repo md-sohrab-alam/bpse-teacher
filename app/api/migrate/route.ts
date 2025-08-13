@@ -4,6 +4,7 @@ import { prisma } from '@/lib/db'
 // Force dynamic rendering to prevent build-time database connection
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
+export const revalidate = 0
 
 export async function GET() {
   try {

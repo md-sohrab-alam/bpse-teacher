@@ -4,9 +4,10 @@ import { prisma } from '@/lib/db'
 // Force dynamic rendering to prevent build-time database connection
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
+export const revalidate = 0
 
 // Rate limiting store (in production, use Redis or similar)
-const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+let rateLimitStore: Map<string, { count: number; resetTime: number }> | null = null
 
 // Security configuration
 const SECURITY_CONFIG = {
@@ -20,6 +21,14 @@ const SECURITY_CONFIG = {
   MIN_MESSAGE_LENGTH: 10,
   MAX_MESSAGE_LENGTH: 1000,
   HONEYPOT_FIELD: 'website'
+}
+
+// Initialize rate limit store only when needed
+function getRateLimitStore() {
+  if (!rateLimitStore) {
+    rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+  }
+  return rateLimitStore
 }
 
 interface ContactSubmission {
@@ -78,18 +87,19 @@ function isSpam(submission: ContactSubmission, clientIP: string): { isSpam: bool
 }
 
 function checkRateLimit(clientIP: string): { allowed: boolean; remaining: number; resetTime: number } {
+  const store = getRateLimitStore()
   const now = Date.now()
   const hourKey = `${clientIP}:hour:${Math.floor(now / (1000 * 60 * 60))}`
   const dayKey = `${clientIP}:day:${Math.floor(now / (1000 * 60 * 60 * 24))}`
 
   // Check hourly limit
-  const hourData = rateLimitStore.get(hourKey) || { count: 0, resetTime: now + (1000 * 60 * 60) }
+  const hourData = store.get(hourKey) || { count: 0, resetTime: now + (1000 * 60 * 60) }
   if (hourData.count >= SECURITY_CONFIG.MAX_SUBMISSIONS_PER_HOUR) {
     return { allowed: false, remaining: 0, resetTime: hourData.resetTime }
   }
 
   // Check daily limit
-  const dayData = rateLimitStore.get(dayKey) || { count: 0, resetTime: now + (1000 * 60 * 60 * 24) }
+  const dayData = store.get(dayKey) || { count: 0, resetTime: now + (1000 * 60 * 60 * 24) }
   if (dayData.count >= SECURITY_CONFIG.MAX_SUBMISSIONS_PER_DAY) {
     return { allowed: false, remaining: 0, resetTime: dayData.resetTime }
   }
@@ -97,8 +107,8 @@ function checkRateLimit(clientIP: string): { allowed: boolean; remaining: number
   // Update counters
   hourData.count++
   dayData.count++
-  rateLimitStore.set(hourKey, hourData)
-  rateLimitStore.set(dayKey, dayData)
+  store.set(hourKey, hourData)
+  store.set(dayKey, dayData)
 
   return { 
     allowed: true, 
@@ -233,10 +243,11 @@ export async function POST(request: NextRequest) {
 
 // Clean up rate limit store on each request (simpler approach for serverless)
 function cleanupRateLimitStore() {
+  const store = getRateLimitStore()
   const now = Date.now()
-  Array.from(rateLimitStore.entries()).forEach(([key, data]) => {
+  Array.from(store.entries()).forEach(([key, data]) => {
     if (now > data.resetTime) {
-      rateLimitStore.delete(key)
+      store.delete(key)
     }
   })
 }
