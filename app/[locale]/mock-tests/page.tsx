@@ -385,8 +385,8 @@ export default function MockTestsPage({ params: { locale } }: MockTestsPageProps
     return `${minutes}m`
   }
 
-  const uniqueExams = [...new Set(mockTests.map(test => test.exam))]
-  const uniqueSubjects = [...new Set(mockTests.map(test => test.subject))]
+  const uniqueExams = Array.from(new Set(mockTests.map(test => test.exam)))
+  const uniqueSubjects = Array.from(new Set(mockTests.map(test => test.subject)))
 
   return (
     <div className="min-h-screen bg-gray-50">
