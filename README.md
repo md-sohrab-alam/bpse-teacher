@@ -8,7 +8,7 @@ A comprehensive bilingual (English + Hindi) website providing everything student
 - **Bilingual Support**: Complete English and Hindi interface
 - **Eligibility Checker**: Interactive form to check eligibility for both exams
 - **Exam Information**: Detailed information about STET and BPSC Teacher exams
-- **Mock Tests**: Practice tests with timer and negative marking
+- **Mock Tests**: Practice tests with timer
 - **News & Updates**: Latest exam notifications and updates
 - **Syllabus**: Complete syllabus for all subjects and levels
 - **Cut-off Analysis**: Historical cut-off data and trends
@@ -155,7 +155,7 @@ bpscteacher/
 - Downloadable resources
 
 ### Mock Tests (`/mock-tests`)
-- Timer-based tests with negative marking
+- Timer-based tests
 - Question navigator (desktop) / bottom drawer (mobile)
 - Result analytics with PDF download
 - Bilingual questions and explanations

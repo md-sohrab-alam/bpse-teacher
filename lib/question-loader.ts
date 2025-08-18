@@ -4,6 +4,14 @@ import { computerScienceQuestions2 } from '@/data/computer-science-questions-2'
 import { computerScienceQuestions3 } from '@/data/computer-science-questions-3'
 import { computerScienceQuestions4 } from '@/data/computer-science-questions-4'
 import { computerScienceQuestions5 } from '@/data/computer-science-questions-5'
+import { allComputerScienceQuestions } from '@/data/computer-science-questions-complete'
+import { generalStudiesQuestions } from '@/data/general-studies-questions'
+import { physicsQuestions } from '@/data/physics-questions'
+import { chemistryQuestions } from '@/data/chemistry-questions'
+import { biologyQuestions } from '@/data/biology-questions'
+import { historyQuestions } from '@/data/history-questions'
+import { geographyQuestions } from '@/data/geography-questions'
+import { economicsQuestions } from '@/data/economics-questions'
 import { mathQuestions1 } from '@/data/math/math-1'
 import { stetQuestions1 } from '@/data/stet/computer/stetQuestions1'
 import { stetQuestions2 } from '@/data/stet/computer/stetQuestions2'
@@ -65,6 +73,14 @@ const questionSets: Record<string, any[]> = {
   'computer-science-3': computerScienceQuestions3,
   'computer-science-4': computerScienceQuestions4,
   'computer-science-5': computerScienceQuestions5,
+  'computer-science-complete': allComputerScienceQuestions,
+  'general-studies': generalStudiesQuestions,
+  'physics': physicsQuestions,
+  'chemistry': chemistryQuestions,
+  'biology': biologyQuestions,
+  'history': historyQuestions,
+  'geography': geographyQuestions,
+  'economics': economicsQuestions,
   'math-1': mathQuestions1,
   'stet-computer-1': stetQuestions1,
   'stet-computer-2': stetQuestions2,

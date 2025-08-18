@@ -22,7 +22,6 @@ interface MockTest {
   descriptionHi: string
   duration: number
   questions: number
-  negativeMarking: number
   difficulty: string
   attempts: number
   rating: number
@@ -52,7 +51,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए 120 प्रश्नों के साथ व्यापक मॉक टेस्ट।',
       duration: 7200, // 2 hours in seconds
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Medium',
       attempts: 1250,
       rating: 4.8,
@@ -62,7 +60,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -83,7 +80,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए दूसरा व्यापक मॉक टेस्ट।',
       duration: 7200,
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Medium',
       attempts: 980,
       rating: 4.7,
@@ -93,7 +89,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -114,7 +109,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए तीसरा व्यापक मॉक टेस्ट।',
       duration: 7200,
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Medium',
       attempts: 756,
       rating: 4.6,
@@ -124,7 +118,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -145,7 +138,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए चौथा व्यापक मॉक टेस्ट।',
       duration: 7200,
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Medium',
       attempts: 654,
       rating: 4.5,
@@ -155,7 +147,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -176,7 +167,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी कंप्यूटर शिक्षक भर्ती के लिए पांचवां व्यापक मॉक टेस्ट।',
       duration: 7200,
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Medium',
       attempts: 543,
       rating: 4.4,
@@ -186,7 +176,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -207,7 +196,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'बीपीएससी गणित शिक्षक भर्ती के लिए 120 प्रश्नों के साथ व्यापक मॉक टेस्ट।',
       duration: 7200,
       questions: 120,
-      negativeMarking: 0.25,
       difficulty: 'Hard',
       attempts: 432,
       rating: 4.9,
@@ -217,7 +205,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 120 questions',
         'Time duration: 2 hours',
-        'Negative marking: 0.25 marks per wrong answer',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -238,7 +225,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'उन्नत विषयों को कवर करने वाला एसटीईटी कंप्यूटर साइंस का मॉक टेस्ट।',
       duration: 9000, // 2.5 hours
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 345,
       rating: 4.8,
@@ -248,7 +234,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -269,7 +254,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का दूसरा मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 298,
       rating: 4.7,
@@ -279,7 +263,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -300,7 +283,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का तीसरा मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 267,
       rating: 4.6,
@@ -310,7 +292,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -331,7 +312,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का चौथा मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 234,
       rating: 4.5,
@@ -341,7 +321,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -362,7 +341,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का पांचवां मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 198,
       rating: 4.4,
@@ -372,7 +350,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -393,7 +370,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का छठा मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 167,
       rating: 4.3,
@@ -403,7 +379,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -424,7 +399,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       descriptionHi: 'एसटीईटी कंप्यूटर साइंस का सातवां मॉक टेस्ट।',
       duration: 9000,
       questions: 150,
-      negativeMarking: 0,
       difficulty: 'Hard',
       attempts: 145,
       rating: 4.2,
@@ -434,7 +408,6 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
       instructions: [
         'This test contains 150 questions',
         'Time duration: 2.5 hours',
-        'No negative marking',
         'You can navigate between questions',
         'Test will auto-submit when time expires'
       ],
@@ -445,6 +418,209 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
         'Computer Architecture',
         'Software Engineering',
         'Database Systems'
+      ]
+    },
+    {
+      id: '14',
+      title: 'BPSC Physics Teacher – Model Set 1',
+      titleHi: 'बीपीएससी भौतिकी शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Physics Teacher recruitment with 20 questions covering mechanics, thermodynamics, and modern physics.',
+      descriptionHi: 'बीपीएससी भौतिकी शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, यांत्रिकी, ऊष्मागतिकी और आधुनिक भौतिकी को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 89,
+      rating: 4.6,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Physics',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Mechanics',
+        'Thermodynamics',
+        'Modern Physics',
+        'Wave Motion',
+        'Electricity & Magnetism',
+        'Optics'
+      ]
+    },
+    {
+      id: '15',
+      title: 'BPSC Chemistry Teacher – Model Set 1',
+      titleHi: 'बीपीएससी रसायन शास्त्र शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Chemistry Teacher recruitment with 20 questions covering physical chemistry, organic chemistry, and inorganic chemistry.',
+      descriptionHi: 'बीपीएससी रसायन शास्त्र शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, भौतिक रसायन, कार्बनिक रसायन और अकार्बनिक रसायन को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 76,
+      rating: 4.5,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Chemistry',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Physical Chemistry',
+        'Organic Chemistry',
+        'Inorganic Chemistry',
+        'Analytical Chemistry',
+        'Chemical Bonding',
+        'Chemical Kinetics'
+      ]
+    },
+    {
+      id: '16',
+      title: 'BPSC Biology Teacher – Model Set 1',
+      titleHi: 'बीपीएससी जीव विज्ञान शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Biology Teacher recruitment with 20 questions covering cell biology, genetics, ecology, and human physiology.',
+      descriptionHi: 'बीपीएससी जीव विज्ञान शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, कोशिका जीव विज्ञान, आनुवंशिकी, पारिस्थितिकी और मानव शरीर विज्ञान को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 67,
+      rating: 4.4,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Biology',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Cell Biology',
+        'Genetics',
+        'Ecology',
+        'Human Physiology',
+        'Plant Biology',
+        'Evolution'
+      ]
+    },
+    {
+      id: '17',
+      title: 'BPSC History Teacher – Model Set 1',
+      titleHi: 'बीपीएससी इतिहास शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC History Teacher recruitment with 20 questions covering ancient, medieval, and modern Indian history.',
+      descriptionHi: 'बीपीएससी इतिहास शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, प्राचीन, मध्यकालीन और आधुनिक भारतीय इतिहास को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 54,
+      rating: 4.3,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'History',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Ancient Indian History',
+        'Medieval Indian History',
+        'Modern Indian History',
+        'World History',
+        'Indian National Movement',
+        'Post-Independence India'
+      ]
+    },
+    {
+      id: '18',
+      title: 'BPSC Geography Teacher – Model Set 1',
+      titleHi: 'बीपीएससी भूगोल शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Geography Teacher recruitment with 20 questions covering physical geography, human geography, and Indian geography.',
+      descriptionHi: 'बीपीएससी भूगोल शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, भौतिक भूगोल, मानव भूगोल और भारतीय भूगोल को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 43,
+      rating: 4.2,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Geography',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Physical Geography',
+        'Human Geography',
+        'Indian Geography',
+        'World Geography',
+        'Economic Geography',
+        'Environmental Geography'
+      ]
+    },
+    {
+      id: '19',
+      title: 'BPSC Economics Teacher – Model Set 1',
+      titleHi: 'बीपीएससी अर्थशास्त्र शिक्षक – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC Economics Teacher recruitment with 20 questions covering microeconomics, macroeconomics, and Indian economy.',
+      descriptionHi: 'बीपीएससी अर्थशास्त्र शिक्षक भर्ती के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, सूक्ष्मअर्थशास्त्र, समष्टि अर्थशास्त्र और भारतीय अर्थव्यवस्था को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 38,
+      rating: 4.1,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'Economics',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Microeconomics',
+        'Macroeconomics',
+        'Indian Economy',
+        'Development Economics',
+        'International Trade',
+        'Public Finance'
+      ]
+    },
+    {
+      id: '20',
+      title: 'BPSC General Studies – Model Set 1',
+      titleHi: 'बीपीएससी सामान्य अध्ययन – मॉडल सेट 1',
+      description: 'Comprehensive mock test for BPSC General Studies with 20 questions covering current affairs, general knowledge, and reasoning.',
+      descriptionHi: 'बीपीएससी सामान्य अध्ययन के लिए 20 प्रश्नों के साथ व्यापक मॉक टेस्ट, करंट अफेयर्स, सामान्य ज्ञान और तर्कशक्ति को कवर करता है।',
+      duration: 1200,
+      questions: 20,
+      difficulty: 'Medium',
+      attempts: 156,
+      rating: 4.7,
+      isFeatured: false,
+      exam: 'BPSC Teacher',
+      subject: 'General Studies',
+      instructions: [
+        'This test contains 20 questions',
+        'Time duration: 20 minutes',
+        'You can navigate between questions',
+        'Test will auto-submit when time expires'
+      ],
+      topics: [
+        'Current Affairs',
+        'General Knowledge',
+        'Reasoning',
+        'Indian Polity',
+        'Science & Technology',
+        'Sports & Culture'
       ]
     }
   ]
@@ -560,18 +736,18 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
     <div className="min-h-screen bg-gray-50">
       <Navigation locale={locale} />
       
-             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-         {/* Live Activity Notification */}
-         {showAttemptNotification && (
-           <div className="fixed top-20 right-4 z-50 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-in slide-in-from-right duration-300">
-             <div className="flex items-center space-x-2">
-               <Users className="w-4 h-4" />
-               <span className="text-sm font-medium">New attempt started!</span>
-             </div>
-           </div>
-         )}
-         
-         {/* Test Header */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Live Activity Notification */}
+        {showAttemptNotification && (
+          <div className="fixed top-20 right-4 z-50 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-in slide-in-from-right duration-300">
+            <div className="flex items-center space-x-2">
+              <Users className="w-4 h-4" />
+              <span className="text-sm font-medium">New attempt started!</span>
+            </div>
+          </div>
+        )}
+        
+        {/* Test Header */}
         <div className="mb-8">
           <div className="flex items-center space-x-2 mb-4">
             <Link href={`/${locale}/mock-tests`} className="text-bpsc-600 hover:text-bpsc-700">
@@ -591,17 +767,17 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
               <h1 className="text-3xl font-bold text-gray-900 mb-2">{test.title}</h1>
               <p className="text-lg text-gray-600">{test.description}</p>
             </div>
-                         <div className="text-right">
-               <div className="flex items-center space-x-1 text-yellow-500 mb-1">
-                 <Star className="w-5 h-5 fill-current" />
-                 <span className="font-semibold text-lg">{test.rating}</span>
-               </div>
-               <div className="flex items-center space-x-2">
-                 <p className="text-sm text-gray-600">{liveAttempts.toLocaleString()} attempts</p>
-                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                 <span className="text-xs text-green-600 font-medium">Live</span>
-               </div>
-             </div>
+            <div className="text-right">
+              <div className="flex items-center space-x-1 text-yellow-500 mb-1">
+                <Star className="w-5 h-5 fill-current" />
+                <span className="font-semibold text-lg">{test.rating}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <p className="text-sm text-gray-600">{liveAttempts.toLocaleString()} attempts</p>
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs text-green-600 font-medium">Live</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -629,21 +805,14 @@ export default function MockTestPage({ params: { locale, id } }: MockTestPagePro
                       <p className="text-sm text-gray-600">Questions</p>
                     </div>
                   </div>
-                                     <div className="flex items-center space-x-3">
-                     <Users className="w-8 h-8 text-bpsc-600" />
-                     <div>
-                       <div className="flex items-center space-x-2">
-                         <p className="font-semibold text-lg">{liveAttempts.toLocaleString()}</p>
-                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                       </div>
-                       <p className="text-sm text-gray-600">Total Attempts</p>
-                     </div>
-                   </div>
                   <div className="flex items-center space-x-3">
-                    <AlertTriangle className="w-8 h-8 text-red-500" />
+                    <Users className="w-8 h-8 text-bpsc-600" />
                     <div>
-                      <p className="font-semibold text-lg">-{test.negativeMarking}</p>
-                      <p className="text-sm text-gray-600">Negative Marking</p>
+                      <div className="flex items-center space-x-2">
+                        <p className="font-semibold text-lg">{liveAttempts.toLocaleString()}</p>
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      </div>
+                      <p className="text-sm text-gray-600">Total Attempts</p>
                     </div>
                   </div>
                 </div>

@@ -371,9 +371,7 @@ export default function EligibilityPage() {
                                  <tr className="bg-gray-50">
                                    <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Year</th>
                                    <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Category</th>
-                                   <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Pass Marks</th>
                                    <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Cut-off Marks</th>
-                                   <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Vacancies</th>
                                  </tr>
                                </thead>
                                <tbody>
@@ -385,14 +383,8 @@ export default function EligibilityPage() {
                                          {cutoff.category}
                                        </Badge>
                                      </td>
-                                     <td className="border border-gray-300 px-4 py-2 font-medium text-green-600">
-                                       {cutoff.passMarks}
-                                     </td>
                                      <td className="border border-gray-300 px-4 py-2 font-medium text-blue-600">
                                        {cutoff.cutoffMarks}
-                                     </td>
-                                     <td className="border border-gray-300 px-4 py-2 text-center">
-                                       {cutoff.totalVacancies}
                                      </td>
                                    </tr>
                                  ))}

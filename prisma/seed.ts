@@ -15,8 +15,8 @@ async function main() {
       overviewHi: 'बिहार माध्यमिक शिक्षक पात्रता परीक्षा (STET) बिहार विद्यालय परीक्षा समिति (BSEB) द्वारा कक्षा 9-10 और 11-12 के शिक्षकों की नियुक्ति के लिए उम्मीदवारों की पात्रता निर्धारित करने के लिए आयोजित की जाती है।',
       eligibilityEn: '**Age Limit:** 21-37 years (relaxation for reserved categories)\n**Education:** Graduation with 50% marks and B.Ed/D.El.Ed\n**TET Requirement:** CTET/STET qualification required\n**Domicile:** Bihar domicile preferred\n**Note:** Pending 2025 notification for exact criteria',
       eligibilityHi: '**आयु सीमा:** 21-37 वर्ष (आरक्षित श्रेणियों के लिए छूट)\n**शिक्षा:** 50% अंकों के साथ स्नातक और B.Ed/D.El.Ed\n**TET आवश्यकता:** CTET/STET योग्यता आवश्यक\n**डोमिसाइल:** बिहार डोमिसाइल वरीयता\n**नोट:** सटीक मानदंडों के लिए 2025 अधिसूचना लंबित',
-      patternEn: '**Paper-1 (Class 9-10):** 150 questions, 150 marks, 2.5 hours\n**Paper-2 (Class 11-12):** 150 questions, 150 marks, 2.5 hours\n**Question Type:** Objective MCQs\n**Negative Marking:** No negative marking\n**Note:** Pattern pending 2025 official notification',
-      patternHi: '**पेपर-1 (कक्षा 9-10):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**पेपर-2 (कक्षा 11-12):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**प्रश्न प्रकार:** वस्तुनिष्ठ MCQs\n**नेगेटिव मार्किंग:** नहीं\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित',
+      patternEn: '**Paper-1 (Class 9-10):** 150 questions, 150 marks, 2.5 hours\n**Paper-2 (Class 11-12):** 150 questions, 150 marks, 2.5 hours\n**Question Type:** Objective MCQs\n**Note:** Pattern pending 2025 official notification',
+      patternHi: '**पेपर-1 (कक्षा 9-10):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**पेपर-2 (कक्षा 11-12):** 150 प्रश्न, 150 अंक, 2.5 घंटे\n**प्रश्न प्रकार:** वस्तुनिष्ठ MCQs\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित',
       syllabusEn: `# STET Syllabus
 
 ## Paper I (Classes 9-10)
@@ -106,8 +106,8 @@ async function main() {
       overviewHi: 'बिहार लोक सेवा आयोग (BPSC) शिक्षक भर्ती परीक्षा (TRE) बिहार के सरकारी स्कूलों में शिक्षकों की भर्ती के लिए आयोजित की जाती है। परीक्षा में कई चरण शामिल हैं और विभिन्न स्तरों (प्राथमिक, उच्च प्राथमिक, माध्यमिक, उच्च माध्यमिक) के लिए आयोजित की जाती है।',
       eligibilityEn: '**Age Limit:** 21-37 years (relaxation for reserved categories)\n**Education:** Graduation with 50% marks and B.Ed/D.El.Ed\n**TET Requirement:** CTET/STET qualification required\n**Domicile:** Bihar domicile with 84.4% posts prioritized for locals\n**Note:** Pending 2025 notification for exact criteria',
       eligibilityHi: '**आयु सीमा:** 21-37 वर्ष (आरक्षित श्रेणियों के लिए छूट)\n**शिक्षा:** 50% अंकों के साथ स्नातक और B.Ed/D.El.Ed\n**TET आवश्यकता:** CTET/STET योग्यता आवश्यक\n**डोमिसाइल:** बिहार डोमिसाइल, 84.4% पद स्थानीय लोगों के लिए आरक्षित\n**नोट:** सटीक मानदंडों के लिए 2025 अधिसूचना लंबित',
-      patternEn: '**Three Parts:**\n- Language (Hindi/English)\n- General Studies (SCERT)\n- Concerned Subject\n**Total Questions:** 150\n**Duration:** 2.5 hours\n**Negative Marking:** Usually no negative marking (confirm per notification)\n**Note:** Pattern pending 2025 official notification',
-      patternHi: '**तीन भाग:**\n- भाषा (हिंदी/अंग्रेजी)\n- सामान्य अध्ययन (SCERT)\n- संबंधित विषय\n**कुल प्रश्न:** 150\n**अवधि:** 2.5 घंटे\n**नेगेटिव मार्किंग:** आमतौर पर नहीं (अधिसूचना के अनुसार पुष्टि करें)\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित',
+      patternEn: '**Three Parts:**\n- Language (Hindi/English)\n- General Studies (SCERT)\n- Concerned Subject\n**Total Questions:** 150\n**Duration:** 2.5 hours\n**Note:** Pattern pending 2025 official notification',
+      patternHi: '**तीन भाग:**\n- भाषा (हिंदी/अंग्रेजी)\n- सामान्य अध्ययन (SCERT)\n- संबंधित विषय\n**कुल प्रश्न:** 150\n**अवधि:** 2.5 घंटे\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित',
       syllabusEn: `# BPSC Teacher Syllabus
 
 ## General Studies (40 Questions)

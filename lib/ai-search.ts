@@ -41,7 +41,15 @@ export interface SearchResponse {
 }
 
 /**
- * Enhanced search function that combines semantic and keyword matching
+ * Detect if text contains Hindi characters
+ */
+function isHindiText(text: string): boolean {
+  const hindiRegex = /[\u0900-\u097F\u0980-\u09FF\u0A00-\u0A7F\u0A80-\u0AFF\u0B00-\u0B7F\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F\u0D80-\u0DFF\u0E00-\u0E7F\u0E80-\u0EFF\u0F00-\u0FFF]/
+  return hindiRegex.test(text)
+}
+
+/**
+ * Enhanced search function that combines semantic and keyword matching with bilingual support
  */
 export async function enhancedSearch(
   searchQuery: SearchQuery,
@@ -58,15 +66,37 @@ export async function enhancedSearch(
   const startTime = Date.now()
   const { query, language = 'en', filters, limit = 10 } = searchQuery
 
-  // Filter content based on search query
+  // Auto-detect language if not specified
+  const detectedLanguage = language || (isHindiText(query) ? 'hi' : 'en')
+  const isHindi = detectedLanguage === 'hi'
+
+  // Filter content based on search query with bilingual support
   let filteredContent = searchableContent.filter(item => {
-    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    // Use appropriate language content for search
+    const searchTitle = isHindi ? item.titleHi : item.title
+    const searchContent = isHindi ? item.contentHi : item.content
+    const searchText = `${searchTitle} ${searchContent}`.toLowerCase()
     const queryLower = query.toLowerCase()
     
-    // Basic keyword matching
-    const hasKeyword = queryLower.split(' ').some(word => 
-      searchText.includes(word) && word.length > 2
+    // Enhanced keyword matching for both languages
+    const queryWords = queryLower.split(' ').filter(word => word.length > 1)
+    
+    // Check for exact matches first
+    const hasExactMatch = searchText.includes(queryLower)
+    
+    // Check for word matches
+    const hasWordMatches = queryWords.some(word => 
+      searchText.includes(word) && word.length > 1
     )
+    
+    // For Hindi queries, also check English content as fallback
+    let hasEnglishFallback = false
+    if (isHindi) {
+      const englishSearchText = `${item.title} ${item.content}`.toLowerCase()
+      hasEnglishFallback = queryWords.some(word => 
+        englishSearchText.includes(word) && word.length > 1
+      )
+    }
     
     // Apply filters if provided
     if (filters) {
@@ -90,23 +120,25 @@ export async function enhancedSearch(
       }
     }
     
-    return hasKeyword
+    return hasExactMatch || hasWordMatches || hasEnglishFallback
   })
 
-  // Calculate relevance scores
+  // Calculate relevance scores with bilingual support
   const scoredResults = filteredContent.map(item => {
-    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    const searchTitle = isHindi ? item.titleHi : item.title
+    const searchContent = isHindi ? item.contentHi : item.content
+    const searchText = `${searchTitle} ${searchContent}`.toLowerCase()
     const queryLower = query.toLowerCase()
     
     let relevance = 0
     
     // Title match gets higher weight
-    if (item.title.toLowerCase().includes(queryLower)) {
+    if (searchTitle.toLowerCase().includes(queryLower)) {
       relevance += 10
     }
     
     // Content match
-    if (item.content.toLowerCase().includes(queryLower)) {
+    if (searchContent.toLowerCase().includes(queryLower)) {
       relevance += 5
     }
     
@@ -116,12 +148,29 @@ export async function enhancedSearch(
     }
     
     // Word-by-word matching
-    const queryWords = queryLower.split(' ').filter(word => word.length > 2)
+    const queryWords = queryLower.split(' ').filter(word => word.length > 1)
     queryWords.forEach(word => {
       if (searchText.includes(word)) {
         relevance += 2
       }
     })
+    
+    // Language preference bonus
+    if (isHindi && item.titleHi && item.contentHi) {
+      relevance += 20 // Bonus for Hindi content when searching in Hindi
+    } else if (!isHindi && item.title && item.content) {
+      relevance += 20 // Bonus for English content when searching in English
+    }
+    
+    // Fallback scoring for Hindi queries in English content
+    if (isHindi) {
+      const englishSearchText = `${item.title} ${item.content}`.toLowerCase()
+      queryWords.forEach(word => {
+        if (englishSearchText.includes(word)) {
+          relevance += 1 // Lower score for English fallback
+        }
+      })
+    }
     
     // Type-specific scoring
     if (item.type === 'exam') relevance += 3
@@ -131,13 +180,13 @@ export async function enhancedSearch(
     return {
       id: item.id,
       type: item.type as SearchResult['type'],
-      title: item.title,
+      title: isHindi ? item.titleHi : item.title,
       titleHi: item.titleHi,
-      content: item.content,
+      content: isHindi ? item.contentHi : item.content,
       contentHi: item.contentHi,
       relevance,
       metadata: item.metadata,
-      url: `/${language}/${item.type}/${item.id}`
+      url: `/${detectedLanguage}/${item.type}/${item.id}`
     }
   })
 
@@ -181,16 +230,20 @@ export async function extractKeyInfo(results: SearchResult[]) {
 }
 
 /**
- * Generate search suggestions
+ * Generate search suggestions with bilingual support
  */
 function generateSuggestions(query: string, content: any[]): string[] {
   const suggestions = new Set<string>()
+  const isHindi = isHindiText(query)
   
   content.forEach(item => {
-    const searchText = `${item.title} ${item.content}`.toLowerCase()
+    // Use appropriate language content for suggestions
+    const searchTitle = isHindi ? item.titleHi : item.title
+    const searchContent = isHindi ? item.contentHi : item.content
+    const searchText = `${searchTitle} ${searchContent}`.toLowerCase()
     const queryLower = query.toLowerCase()
     
-    if (searchText.includes(queryLower) && queryLower.length > 2) {
+    if (searchText.includes(queryLower) && queryLower.length > 1) {
       // Extract phrases that contain the query
       const words = searchText.split(' ')
       for (let i = 0; i < words.length - 2; i++) {
@@ -202,7 +255,20 @@ function generateSuggestions(query: string, content: any[]): string[] {
     }
   })
   
-  return Array.from(suggestions).slice(0, 5)
+  // Add language-specific suggestions
+  if (isHindi) {
+    suggestions.add('एसटीईटी परीक्षा की तैयारी')
+    suggestions.add('बीपीएससी शिक्षक भर्ती')
+    suggestions.add('पात्रता मापदंड')
+    suggestions.add('परीक्षा पैटर्न')
+  } else {
+    suggestions.add('STET exam preparation')
+    suggestions.add('BPSC teacher recruitment')
+    suggestions.add('eligibility criteria')
+    suggestions.add('exam pattern')
+  }
+  
+  return Array.from(suggestions).slice(0, 8)
 }
 
 /**

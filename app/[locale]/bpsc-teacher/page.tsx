@@ -53,8 +53,8 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
       hi: `**आयु सीमा:** 21-37 वर्ष (आरक्षित श्रेणियों के लिए छूट)\n**शिक्षा:** 50% अंकों के साथ स्नातक और B.Ed/D.El.Ed\n**TET आवश्यकता:** CTET/STET योग्यता आवश्यक\n**डोमिसाइल:** बिहार डोमिसाइल, 84.4% पद स्थानीय लोगों के लिए आरक्षित\n**नोट:** सटीक मानदंडों के लिए 2025 अधिसूचना लंबित`
     },
     pattern: {
-      en: `**Three Parts:**\n- Language (Hindi/English)\n- General Studies (SCERT)\n- Concerned Subject\n**Total Questions:** 150\n**Duration:** 2.5 hours\n**Negative Marking:** Usually no negative marking (confirm per notification)\n**Note:** Pattern pending 2025 official notification`,
-      hi: `**तीन भाग:**\n- भाषा (हिंदी/अंग्रेजी)\n- सामान्य अध्ययन (SCERT)\n- संबंधित विषय\n**कुल प्रश्न:** 150\n**अवधि:** 2.5 घंटे\n**नेगेटिव मार्किंग:** आमतौर पर नहीं (अधिसूचना के अनुसार पुष्टि करें)\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित`
+      en: `**Three Parts:**\n- Language (Hindi/English)\n- General Studies (SCERT)\n- Concerned Subject\n**Total Questions:** 150\n**Duration:** 2.5 hours\n**Note:** Pattern pending 2025 official notification`,
+      hi: `**तीन भाग:**\n- भाषा (हिंदी/अंग्रेजी)\n- सामान्य अध्ययन (SCERT)\n- संबंधित विषय\n**कुल प्रश्न:** 150\n**अवधि:** 2.5 घंटे\n**नोट:** पैटर्न 2025 आधिकारिक अधिसूचना लंबित`
     },
     syllabus: {
       en: `**Language Section:**\n- Hindi/English grammar and comprehension\n\n**General Studies (SCERT):**\n- Current affairs\n- Bihar-specific knowledge\n- Educational policies\n\n**Subject-specific:**\n- Based on concerned subject for the post\n\n*Note: Detailed syllabus pending 2025 notification*`,

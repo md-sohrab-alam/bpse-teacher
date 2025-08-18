@@ -64,6 +64,7 @@ export default function SearchPage({ params: { locale }, searchParams }: SearchP
   const [isSearching, setIsSearching] = useState(false)
   const [activeTab, setActiveTab] = useState('all')
   const [selectedResult, setSelectedResult] = useState<SearchResult | null>(null)
+  const [searchLanguage, setSearchLanguage] = useState<string>('en')
 
   // Handle initial search from URL params
   useEffect(() => {
@@ -79,6 +80,11 @@ export default function SearchPage({ params: { locale }, searchParams }: SearchP
     setSearchResponse(null)
 
     try {
+      // Auto-detect language from query
+      const isHindiQuery = /[\u0900-\u097F\u0980-\u09FF\u0A00-\u0A7F\u0A80-\u0AFF\u0B00-\u0B7F\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F\u0D80-\u0DFF\u0E00-\u0E7F\u0E80-\u0EFF\u0F00-\u0FFF]/.test(query)
+      const detectedLanguage = isHindiQuery ? 'hi' : locale
+      setSearchLanguage(detectedLanguage)
+
       const response = await fetch('/api/agent', {
         method: 'POST',
         headers: {
@@ -86,7 +92,7 @@ export default function SearchPage({ params: { locale }, searchParams }: SearchP
         },
         body: JSON.stringify({
           question: query.trim(),
-          language: locale === 'hi' ? 'hi' : 'en'
+          language: detectedLanguage
         })
       })
 
@@ -190,9 +196,14 @@ export default function SearchPage({ params: { locale }, searchParams }: SearchP
             {/* Search Summary */}
             <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
               <CardHeader>
-                <CardTitle className="flex items-center text-blue-900">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  AI Analysis Summary
+                <CardTitle className="flex items-center justify-between text-blue-900">
+                  <div className="flex items-center">
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    AI Analysis Summary
+                  </div>
+                  <Badge variant="outline" className="text-xs">
+                    {searchLanguage === 'hi' ? 'हिंदी में खोज' : 'Search in English'}
+                  </Badge>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -316,11 +327,11 @@ export default function SearchPage({ params: { locale }, searchParams }: SearchP
                           </div>
                           
                           <h3 className="font-semibold text-lg mb-2">
-                            {locale === 'hi' ? result.titleHi : result.title}
+                            {searchLanguage === 'hi' ? result.titleHi : result.title}
                           </h3>
                           
                           <p className="text-gray-600 mb-3 line-clamp-3">
-                            {locale === 'hi' ? result.contentHi : result.content}
+                            {searchLanguage === 'hi' ? result.contentHi : result.content}
                           </p>
                           
                           <div className="flex items-center justify-between">

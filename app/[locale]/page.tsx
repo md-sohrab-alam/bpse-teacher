@@ -17,6 +17,7 @@ interface HomePageProps {
 
 export default function HomePage({ params: { locale } }: HomePageProps) {
   const t = useTranslations('home')
+  const navT = useTranslations('navigation')
   const [stats, setStats] = useState({
     participants: 5000,
     rating: 4.2,
@@ -354,7 +355,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-                             <h3 className="text-lg font-semibold mb-4">{t('navigation.bpscTeacher')}</h3>
+                             <h3 className="text-lg font-semibold mb-4">{navT('bpscTeacher')}</h3>
                <p className="text-gray-400 text-sm">
                  {t('footer.description')}
                </p>

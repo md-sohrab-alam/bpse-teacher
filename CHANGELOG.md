@@ -16,7 +16,7 @@
 - **Updated**: Exam information with verified 2024 data
 - **Added**: "Pending 2025" badges for sections awaiting official notification
 - **Verified Data**:
-  - **Pattern**: Paper-1 (Class 9-10) & Paper-2 (Class 11-12); 150 questions, 150 marks, 2.5 hours, no negative marking
+  - **Pattern**: Paper-1 (Class 9-10) & Paper-2 (Class 11-12); 150 questions, 150 marks, 2.5 hours
   - **Cut-off Marks 2024**: 
     - General: 75 (50%)
     - BC: 68.25 (45.5%)

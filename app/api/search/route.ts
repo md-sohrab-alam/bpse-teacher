@@ -3,6 +3,12 @@ import { enhancedSearch, SearchQuery, extractKeyInfo } from '@/lib/ai-search'
 import { prisma } from '@/lib/db'
 import { computerScienceQuestions } from '@/data/computer-science-questions'
 import { generalStudiesQuestions } from '@/data/general-studies-questions'
+import { physicsQuestions } from '@/data/physics-questions'
+import { chemistryQuestions } from '@/data/chemistry-questions'
+import { biologyQuestions } from '@/data/biology-questions'
+import { historyQuestions } from '@/data/history-questions'
+import { geographyQuestions } from '@/data/geography-questions'
+import { economicsQuestions } from '@/data/economics-questions'
 
 export async function POST(request: NextRequest) {
   try {
@@ -89,6 +95,109 @@ async function collectSearchableContent() {
           difficulty: 'Medium',
           examType: 'BPSC_TEACHER',
           category: 'General'
+        }
+      })
+    })
+
+    // Add new question sets
+    physicsQuestions.forEach((q, index) => {
+      content.push({
+        id: `physics_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'Physics',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Science'
+        }
+      })
+    })
+
+    chemistryQuestions.forEach((q, index) => {
+      content.push({
+        id: `chemistry_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'Chemistry',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Science'
+        }
+      })
+    })
+
+    biologyQuestions.forEach((q, index) => {
+      content.push({
+        id: `biology_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'Biology',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Science'
+        }
+      })
+    })
+
+    historyQuestions.forEach((q, index) => {
+      content.push({
+        id: `history_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'History',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Arts'
+        }
+      })
+    })
+
+    geographyQuestions.forEach((q, index) => {
+      content.push({
+        id: `geography_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'Geography',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Arts'
+        }
+      })
+    })
+
+    economicsQuestions.forEach((q, index) => {
+      content.push({
+        id: `economics_question_${index}`,
+        type: 'question',
+        title: q.textEn,
+        titleHi: q.textHi,
+        content: `${q.optionAEn} ${q.optionBEn} ${q.optionCEn} ${q.optionDEn} ${q.explanationEn || ''}`,
+        contentHi: `${q.optionAHi} ${q.optionBHi} ${q.optionCHi} ${q.optionDHi} ${q.explanationHi || ''}`,
+        metadata: {
+          topic: 'Economics',
+          difficulty: 'Medium',
+          examType: 'BPSC_TEACHER',
+          category: 'Commerce'
         }
       })
     })
@@ -349,8 +458,8 @@ async function collectSearchableContent() {
         type: 'question',
         title: 'Computer Science Mock Test - Set 1',
         titleHi: 'कंप्यूटर साइंस मॉक टेस्ट - सेट 1',
-        content: 'Practice mock test for Computer Science with 50 questions. Duration: 60 minutes. Negative marking: 0.25 marks per wrong answer.',
-        contentHi: '50 प्रश्नों के साथ कंप्यूटर साइंस के लिए अभ्यास मॉक टेस्ट। अवधि: 60 मिनट। नेगेटिव मार्किंग: प्रति गलत उत्तर 0.25 अंक।',
+        content: 'Practice mock test for Computer Science with 50 questions. Duration: 60 minutes.',
+                  contentHi: '50 प्रश्नों के साथ कंप्यूटर साइंस के लिए अभ्यास मॉक टेस्ट। अवधि: 60 मिनट।',
         metadata: {
           examType: 'BPSC_TEACHER',
           topic: 'Mock Tests',
@@ -363,8 +472,8 @@ async function collectSearchableContent() {
         type: 'question',
         title: 'General Studies Mock Test - Set 1',
         titleHi: 'सामान्य अध्ययन मॉक टेस्ट - सेट 1',
-        content: 'Practice mock test for General Studies with 50 questions. Duration: 60 minutes. Negative marking: 0.25 marks per wrong answer.',
-        contentHi: '50 प्रश्नों के साथ सामान्य अध्ययन के लिए अभ्यास मॉक टेस्ट। अवधि: 60 मिनट। नेगेटिव मार्किंग: प्रति गलत उत्तर 0.25 अंक।',
+        content: 'Practice mock test for General Studies with 50 questions. Duration: 60 minutes.',
+        contentHi: '50 प्रश्नों के साथ सामान्य अध्ययन के लिए अभ्यास मॉक टेस्ट। अवधि: 60 मिनट।',
         metadata: {
           examType: 'BPSC_TEACHER',
           topic: 'Mock Tests',
