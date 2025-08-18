@@ -115,12 +115,22 @@ export function ContactForm({ locale }: { locale: string }) {
         })
         // Store submission timestamp for rate limiting
         localStorage.setItem('lastContactSubmission', Date.now().toString())
-      } else {
-        const error = await response.json()
-        console.error('Contact form error:', error)
-        setErrorMessage(error.message || error.error || 'Failed to send message. Please try again.')
-        setSubmitStatus('error')
-      }
+             } else {
+         const error = await response.json()
+         console.error('Contact form error:', error)
+         
+         // Provide more specific error messages
+         if (error.error === 'Invalid submission') {
+           setErrorMessage('Form validation failed. Please check your input and try again.')
+         } else if (error.error === 'Missing required fields') {
+           setErrorMessage('Please fill in all required fields.')
+         } else if (error.error === 'Rate limit exceeded') {
+           setErrorMessage('Too many submissions. Please wait a moment before trying again.')
+         } else {
+           setErrorMessage(error.message || error.error || 'Failed to send message. Please try again.')
+         }
+         setSubmitStatus('error')
+       }
     } catch (error) {
       setErrorMessage('Network error. Please check your connection and try again.')
       setSubmitStatus('error')
@@ -141,17 +151,18 @@ export function ContactForm({ locale }: { locale: string }) {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Honeypot field - hidden from users */}
-            <div className="absolute -left-[9999px]">
-              <input
-                type="text"
-                name="website"
-                value={formData.honeypot}
-                onChange={(e) => handleInputChange('honeypot', e.target.value)}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
+                         {/* Honeypot field - hidden from users */}
+             <div className="absolute -left-[9999px]">
+               <input
+                 type="text"
+                 name="website"
+                 value={formData.honeypot}
+                 onChange={(e) => handleInputChange('honeypot', e.target.value)}
+                 tabIndex={-1}
+                 autoComplete="off"
+                 aria-hidden="true"
+               />
+             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -280,33 +291,46 @@ export function ContactForm({ locale }: { locale: string }) {
             </Button>
           </form>
 
-                     {/* Alternative contact methods */}
-           <div className="mt-6 pt-6 border-t">
-             <h3 className="text-sm font-medium text-gray-700 mb-3">{t('alternativeContact')}</h3>
-             <div className="space-y-2">
-               <div className="flex items-center gap-2 text-sm text-gray-600">
-                 <Mail className="w-4 h-4" />
-                 <span>{t('emailUs')}:</span>
-                 <Badge variant="outline" className="font-mono text-xs">
-                   {t('emailPlaceholder')}
-                 </Badge>
-               </div>
-               <div className="flex items-center gap-2 text-sm text-gray-600">
-                 <Phone className="w-4 h-4" />
-                 <span>{t('whatsapp')}:</span>
-                 <Badge variant="outline" className="font-mono text-xs">
-                   {t('phonePlaceholder')}
-                 </Badge>
-               </div>
-               <div className="flex items-center gap-2 text-sm text-gray-600">
-                 <Twitter className="w-4 h-4" />
-                 <span>{t('twitter')}:</span>
-                 <Badge variant="outline" className="font-mono text-xs">
-                   {t('twitterPlaceholder')}
-                 </Badge>
-               </div>
-             </div>
-           </div>
+                                {/* Alternative contact methods */}
+            <div className="mt-6 pt-6 border-t">
+              <h3 className="text-sm font-medium text-gray-700 mb-3">{t('alternativeContact')}</h3>
+              <div className="space-y-2">
+                <a 
+                  href="mailto:iamsohrabalam@gmail.com" 
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>{t('emailUs')}:</span>
+                  <Badge variant="outline" className="font-mono text-xs hover:bg-blue-50">
+                    {t('emailPlaceholder')}
+                  </Badge>
+                </a>
+                <a 
+                  href="https://wa.me/919899539767" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-green-600 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>{t('whatsapp')}:</span>
+                  <Badge variant="outline" className="font-mono text-xs hover:bg-green-50">
+                    {t('phonePlaceholder')}
+                  </Badge>
+                </a>
+                <a 
+                  href="https://x.com/iamsohrabalam" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-500 transition-colors"
+                >
+                  <Twitter className="w-4 h-4" />
+                  <span>{t('twitter')}:</span>
+                  <Badge variant="outline" className="font-mono text-xs hover:bg-blue-50">
+                    {t('twitterPlaceholder')}
+                  </Badge>
+                </a>
+              </div>
+            </div>
         </CardContent>
       </Card>
     </div>

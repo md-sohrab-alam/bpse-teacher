@@ -378,23 +378,42 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
                  <li><Link href={`/${locale}/resources`} className="hover:text-white">Downloads</Link></li>
                </ul>
             </div>
-            <div>
+                         <div>
                              <h4 className="font-semibold mb-4">{t('footer.contact')}</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  iamsohrabalam@gmail.com
-                </li>
-                <li className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +91 98995 39767
-                </li>
-                <li className="flex items-center">
-                  <Twitter className="w-4 h-4 mr-2" />
-                  @iamsohrabalam
-                </li>
-              </ul>
-            </div>
+               <ul className="space-y-2 text-sm text-gray-400">
+                 <li>
+                   <a 
+                     href="mailto:iamsohrabalam@gmail.com"
+                     className="flex items-center hover:text-white transition-colors"
+                   >
+                     <Mail className="w-4 h-4 mr-2" />
+                     iamsohrabalam@gmail.com
+                   </a>
+                 </li>
+                 <li>
+                   <a 
+                     href="https://wa.me/919899539767"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="flex items-center hover:text-white transition-colors"
+                   >
+                     <Phone className="w-4 h-4 mr-2" />
+                     +91 98995 39767
+                   </a>
+                 </li>
+                 <li>
+                   <a 
+                     href="https://x.com/iamsohrabalam"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="flex items-center hover:text-white transition-colors"
+                   >
+                     <Twitter className="w-4 h-4 mr-2" />
+                     @iamsohrabalam
+                   </a>
+                 </li>
+               </ul>
+             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
                          <p>{t('footer.copyright')}</p>

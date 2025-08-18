@@ -181,9 +181,25 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const submission: ContactSubmission = await request.json()
+    
+    // Log submission for debugging (remove in production)
+    console.log('Contact submission received:', {
+      name: submission.name,
+      email: submission.email,
+      category: submission.category,
+      messageLength: submission.message?.length,
+      honeypot: submission.honeypot,
+      hasRequiredFields: !!(submission.name && submission.email && submission.message && submission.category)
+    })
 
     // Validate required fields
     if (!submission.name || !submission.email || !submission.message || !submission.category) {
+      console.log('Missing required fields:', { 
+        name: !!submission.name, 
+        email: !!submission.email, 
+        message: !!submission.message, 
+        category: !!submission.category 
+      })
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -195,7 +211,7 @@ export async function POST(request: NextRequest) {
     if (spamCheck.isSpam) {
       console.log(`Spam detected from IP ${clientIP}: ${spamCheck.reason}`)
       return NextResponse.json(
-        { error: 'Invalid submission' },
+        { error: 'Invalid submission', reason: spamCheck.reason },
         { status: 400 }
       )
     }

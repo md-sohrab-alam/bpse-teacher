@@ -38,29 +38,42 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                   {t('quickContact')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-blue-600" />
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{t('email')}</p>
-                    <p className="text-sm text-gray-600">{t('emailPlaceholder')}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-green-600" />
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{t('whatsapp')}</p>
-                    <p className="text-sm text-gray-600">{t('phonePlaceholder')}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Twitter className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{t('twitter')}</p>
-                    <p className="text-sm text-gray-600">{t('twitterPlaceholder')}</p>
-                  </div>
-                </div>
-              </CardContent>
+                             <CardContent className="space-y-4">
+                 <a 
+                   href="mailto:iamsohrabalam@gmail.com"
+                   className="flex items-center gap-3 hover:bg-blue-50 p-2 rounded-lg transition-colors"
+                 >
+                   <Mail className="w-5 h-5 text-blue-600" />
+                   <div>
+                     <p className="text-sm font-medium text-gray-900">{t('email')}</p>
+                     <p className="text-sm text-gray-600">{t('emailPlaceholder')}</p>
+                   </div>
+                 </a>
+                 <a 
+                   href="https://wa.me/919899539767"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-3 hover:bg-green-50 p-2 rounded-lg transition-colors"
+                 >
+                   <Phone className="w-5 h-5 text-green-600" />
+                   <div>
+                     <p className="text-sm font-medium text-gray-900">{t('whatsapp')}</p>
+                     <p className="text-sm text-gray-600">{t('phonePlaceholder')}</p>
+                   </div>
+                 </a>
+                 <a 
+                   href="https://x.com/iamsohrabalam"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-3 hover:bg-blue-50 p-2 rounded-lg transition-colors"
+                 >
+                   <Twitter className="w-5 h-5 text-blue-500" />
+                   <div>
+                     <p className="text-sm font-medium text-gray-900">{t('twitter')}</p>
+                     <p className="text-sm text-gray-600">{t('twitterPlaceholder')}</p>
+                   </div>
+                 </a>
+               </CardContent>
             </Card>
 
             {/* Response Time */}
