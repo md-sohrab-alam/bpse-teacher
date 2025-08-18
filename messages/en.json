@@ -199,9 +199,11 @@
     "success": "Message sent successfully! We'll get back to you soon.",
     "alternativeContact": "Alternative Contact Methods",
     "emailUs": "Email us at",
-    "emailPlaceholder": "contact@bpseteacher.com",
+    "emailPlaceholder": "iamsohrabalam@gmail.com",
     "whatsapp": "WhatsApp",
     "phonePlaceholder": "+91 98995 39767",
+    "twitter": "Follow us on X",
+    "twitterPlaceholder": "@iamsohrabalam",
     "quickContact": "Quick Contact",
     "responseTime": {
       "title": "Response Time",

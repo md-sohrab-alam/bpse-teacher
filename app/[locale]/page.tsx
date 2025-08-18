@@ -5,7 +5,7 @@ import { Navigation } from '@/components/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Search, BookOpen, Calculator, FileText, TrendingUp, Users, Star, Award, Clock, ExternalLink, RefreshCw, Loader2 } from 'lucide-react'
+import { Search, BookOpen, Calculator, FileText, TrendingUp, Users, Star, Award, Clock, ExternalLink, RefreshCw, Loader2, Mail, Phone, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Search as SearchComponent } from '@/components/search'
@@ -381,9 +381,18 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
             <div>
                              <h4 className="font-semibold mb-4">{t('footer.contact')}</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                                 <li>{t('footer.email')}</li>
-                 <li>{t('footer.phone')}</li>
-                 <li>{t('footer.address')}</li>
+                <li className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  iamsohrabalam@gmail.com
+                </li>
+                <li className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  +91 98995 39767
+                </li>
+                <li className="flex items-center">
+                  <Twitter className="w-4 h-4 mr-2" />
+                  @iamsohrabalam
+                </li>
               </ul>
             </div>
           </div>

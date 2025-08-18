@@ -199,9 +199,11 @@
     "success": "संदेश सफलतापूर्वक भेजा गया! हम जल्द ही आपसे संपर्क करेंगे।",
     "alternativeContact": "वैकल्पिक संपर्क विधियां",
     "emailUs": "हमें ईमेल करें",
-    "emailPlaceholder": "contact@bpseteacher.com",
+    "emailPlaceholder": "iamsohrabalam@gmail.com",
     "whatsapp": "व्हाट्सऐप",
     "phonePlaceholder": "+91 98995 39767",
+    "twitter": "X पर हमें फॉलो करें",
+    "twitterPlaceholder": "@iamsohrabalam",
     "quickContact": "त्वरित संपर्क",
     "responseTime": {
       "title": "प्रतिक्रिया समय",

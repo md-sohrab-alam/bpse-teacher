@@ -201,23 +201,29 @@ export async function POST(request: NextRequest) {
     }
 
     // Store submission in database (optional, for analytics)
-    try {
-      await prisma.contactSubmission.create({
-        data: {
-          name: submission.name,
-          email: submission.email,
-          subject: submission.subject || '',
-          message: submission.message,
-          category: submission.category,
-          ipAddress: clientIP,
-          userAgent: submission.userAgent,
-          locale: submission.locale,
-          isSpam: false
-        }
-      })
-    } catch (dbError) {
-      console.error('Failed to store contact submission:', dbError)
-      // Continue with email notification even if DB fails
+    // Only try to store if database is available
+    if (process.env.DATABASE_URL) {
+      try {
+        await prisma.contactSubmission.create({
+          data: {
+            name: submission.name,
+            email: submission.email,
+            subject: submission.subject || '',
+            message: submission.message,
+            category: submission.category,
+            ipAddress: clientIP,
+            userAgent: submission.userAgent,
+            locale: submission.locale,
+            isSpam: false
+          }
+        })
+      } catch (dbError) {
+        console.error('Failed to store contact submission:', dbError)
+        // Continue with email notification even if DB fails
+        // This is not critical for the form to work
+      }
+    } else {
+      console.log('Database not configured, skipping storage')
     }
 
     // Send email notification

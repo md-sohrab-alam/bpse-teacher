@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Mail, MessageSquare, Phone, Shield, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Mail, MessageSquare, Phone, Shield, CheckCircle, AlertCircle, Loader2, Twitter } from 'lucide-react'
 import { trackContactForm } from '@/lib/gtag'
 
 interface ContactFormData {
@@ -117,7 +117,8 @@ export function ContactForm({ locale }: { locale: string }) {
         localStorage.setItem('lastContactSubmission', Date.now().toString())
       } else {
         const error = await response.json()
-        setErrorMessage(error.message || 'Failed to send message. Please try again.')
+        console.error('Contact form error:', error)
+        setErrorMessage(error.message || error.error || 'Failed to send message. Please try again.')
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -279,26 +280,33 @@ export function ContactForm({ locale }: { locale: string }) {
             </Button>
           </form>
 
-          {/* Alternative contact methods */}
-          <div className="mt-6 pt-6 border-t">
-            <h3 className="text-sm font-medium text-gray-700 mb-3">{t('alternativeContact')}</h3>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Mail className="w-4 h-4" />
-                <span>{t('emailUs')}:</span>
-                <Badge variant="outline" className="font-mono text-xs">
-                  {t('emailPlaceholder')}
-                </Badge>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Phone className="w-4 h-4" />
-                <span>{t('whatsapp')}:</span>
-                <Badge variant="outline" className="font-mono text-xs">
-                  {t('phonePlaceholder')}
-                </Badge>
-              </div>
-            </div>
-          </div>
+                     {/* Alternative contact methods */}
+           <div className="mt-6 pt-6 border-t">
+             <h3 className="text-sm font-medium text-gray-700 mb-3">{t('alternativeContact')}</h3>
+             <div className="space-y-2">
+               <div className="flex items-center gap-2 text-sm text-gray-600">
+                 <Mail className="w-4 h-4" />
+                 <span>{t('emailUs')}:</span>
+                 <Badge variant="outline" className="font-mono text-xs">
+                   {t('emailPlaceholder')}
+                 </Badge>
+               </div>
+               <div className="flex items-center gap-2 text-sm text-gray-600">
+                 <Phone className="w-4 h-4" />
+                 <span>{t('whatsapp')}:</span>
+                 <Badge variant="outline" className="font-mono text-xs">
+                   {t('phonePlaceholder')}
+                 </Badge>
+               </div>
+               <div className="flex items-center gap-2 text-sm text-gray-600">
+                 <Twitter className="w-4 h-4" />
+                 <span>{t('twitter')}:</span>
+                 <Badge variant="outline" className="font-mono text-xs">
+                   {t('twitterPlaceholder')}
+                 </Badge>
+               </div>
+             </div>
+           </div>
         </CardContent>
       </Card>
     </div>

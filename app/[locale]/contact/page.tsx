@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { ContactForm } from '@/components/contact-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Mail, Phone, MessageSquare, Clock, MapPin, Shield } from 'lucide-react'
+import { Mail, Phone, MessageSquare, Clock, MapPin, Shield, Twitter } from 'lucide-react'
 
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('contact')
@@ -51,6 +51,13 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                   <div>
                     <p className="text-sm font-medium text-gray-900">{t('whatsapp')}</p>
                     <p className="text-sm text-gray-600">{t('phonePlaceholder')}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Twitter className="w-5 h-5 text-blue-500" />
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">{t('twitter')}</p>
+                    <p className="text-sm text-gray-600">{t('twitterPlaceholder')}</p>
                   </div>
                 </div>
               </CardContent>
