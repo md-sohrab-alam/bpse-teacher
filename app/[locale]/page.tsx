@@ -174,8 +174,8 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
               </CardHeader>
               <CardContent className="pt-6">
                                  <p className="text-gray-600 mb-4">
-                   STET 2024 results were declared in November 2024 with 70.25% pass rate. STET 2025 notification is expected after TRE-4 vacancies are released. 
-                   The exam determines eligibility for teaching positions in Bihar schools.
+                   STET 2025 notification was released on September 10, 2025. Online application is from September 11-19, 2025. 
+                   Exam dates are October 4-25, 2025. Apply at secondary.biharboardonline.com.
                  </p>
                  <div className="flex space-x-3">
                    <Button variant="stet" asChild>

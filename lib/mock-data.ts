@@ -90,12 +90,12 @@ export async function fetchLatestExamUpdates(): Promise<ExamUpdate[]> {
       type: 'notification'
     },
     {
-      title: 'STET 2025 Notification Expected After TRE-4 Vacancies',
-      content: 'Education Minister Sunil Kumar stated that STET 2025 will be conducted only after TRE-4 vacancies are released. This decision aims to manage the number of qualified candidates effectively.',
-      date: new Date(Date.now() - 432000000).toISOString(), // 5 days ago
-      source: 'Government Statement',
-      url: 'https://state.bihar.gov.in/',
-      type: 'update'
+      title: 'STET 2025 Notification Released - Application Starts September 11',
+      content: 'BSEB has released STET 2025 notification on September 10, 2025. Online application starts from September 11-19, 2025. Exam dates are October 4-25, 2025. Apply at secondary.biharboardonline.com',
+      date: new Date().toISOString(),
+      source: 'Jagran Josh',
+      url: 'https://www.jagranjosh.com/articles/bihar-stet-apply-online-begins-at-secondary-biharboardonline-com-check-registration-last-date-eligibility-and-more-1800002908-1',
+      type: 'notification'
     }
   ]
 }

@@ -30,7 +30,7 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                   <h1 className="text-4xl font-bold text-gray-900">STET (BSEB)</h1>
                   <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
                     <Bell className="w-4 h-4 mr-1" />
-                    {locale === 'hi' ? '2025 में अपेक्षित' : 'Expected 2025'}
+                    {locale === 'hi' ? 'अधिसूचना जारी' : 'Notification Released'}
                   </Badge>
                 </div>
               </div>
@@ -74,8 +74,8 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                       </h4>
                       <p className="text-yellow-700 text-sm">
                         {locale === 'hi'
-                          ? 'STET 2024 के परिणाम नवंबर 2024 में घोषित किए गए थे। 4,23,822 उम्मीदवारों में से 2,97,747 (70.25%) सफल रहे। STET 2025 की अधिसूचना TRE-4 रिक्तियों के बाद जारी होने की उम्मीद है।'
-                          : 'STET 2024 results were declared in November 2024. Out of 423,822 candidates, 297,747 (70.25%) were successful. STET 2025 notification is expected after TRE-4 vacancies are released.'
+                          ? 'STET 2025 की अधिसूचना 10 सितंबर 2025 को जारी की गई है। ऑनलाइन आवेदन 11-19 सितंबर 2025 तक है। परीक्षा तिथियां 4-25 अक्टूबर 2025 हैं। secondary.biharboardonline.com पर आवेदन करें।'
+                          : 'STET 2025 notification was released on September 10, 2025. Online application is from September 11-19, 2025. Exam dates are October 4-25, 2025. Apply at secondary.biharboardonline.com.'
                         }
                       </p>
                     </div>
@@ -199,8 +199,8 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                         </div>
                         <p className="text-sm text-gray-600 mb-4">
                           {locale === 'hi'
-                            ? 'STET 2024 के परिणाम घोषित हो चुके हैं। STET 2025 की अधिसूचना TRE-4 रिक्तियों के बाद जारी होने की उम्मीद है। निम्नलिखित तिथियां अनुमानित हैं।'
-                            : 'STET 2024 results have been declared. STET 2025 notification is expected after TRE-4 vacancies are released. The following dates are tentative.'
+                            ? 'STET 2025 की अधिसूचना 10 सितंबर 2025 को जारी की गई है। निम्नलिखित तिथियां आधिकारिक हैं।'
+                            : 'STET 2025 notification was released on September 10, 2025. The following dates are official.'
                           }
                         </p>
                       </div>
@@ -213,12 +213,12 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                               {locale === 'hi' ? 'अधिसूचना जारी' : 'Notification Release'}
                             </p>
                             <p className="text-sm text-gray-600">
-                              {locale === 'hi' ? 'अपेक्षित: TRE-4 के बाद' : 'Expected: After TRE-4'}
+                              {locale === 'hi' ? '10 सितंबर 2025' : 'September 10, 2025'}
                             </p>
                           </div>
                         </div>
-                        <Badge variant="outline" className="bg-blue-100 text-blue-700">
-                          {locale === 'hi' ? 'अपेक्षित' : 'Expected'}
+                        <Badge variant="outline" className="bg-green-100 text-green-700">
+                          {locale === 'hi' ? 'जारी' : 'Released'}
                         </Badge>
                       </div>
                       
@@ -230,12 +230,12 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                               {locale === 'hi' ? 'आवेदन अवधि' : 'Application Period'}
                             </p>
                             <p className="text-sm text-gray-600">
-                              {locale === 'hi' ? 'अपेक्षित: TRE-4 के बाद' : 'Expected: After TRE-4'}
+                              {locale === 'hi' ? '11-19 सितंबर 2025' : 'September 11-19, 2025'}
                             </p>
                           </div>
                         </div>
                         <Badge variant="outline" className="bg-green-100 text-green-700">
-                          {locale === 'hi' ? 'अपेक्षित' : 'Expected'}
+                          {locale === 'hi' ? 'सक्रिय' : 'Active'}
                         </Badge>
                       </div>
                       
@@ -247,7 +247,7 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                               {locale === 'hi' ? 'प्रवेश पत्र जारी' : 'Admit Card Release'}
                             </p>
                             <p className="text-sm text-gray-600">
-                              {locale === 'hi' ? 'अपेक्षित: TRE-4 के बाद' : 'Expected: After TRE-4'}
+                              {locale === 'hi' ? 'अक्टूबर 2025 में' : 'October 2025'}
                             </p>
                           </div>
                         </div>
@@ -264,12 +264,12 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                               {locale === 'hi' ? 'परीक्षा तिथि' : 'Exam Date'}
                             </p>
                             <p className="text-sm text-gray-600">
-                              {locale === 'hi' ? 'अपेक्षित: TRE-4 के बाद' : 'Expected: After TRE-4'}
+                              {locale === 'hi' ? '4-25 अक्टूबर 2025' : 'October 4-25, 2025'}
                             </p>
                           </div>
                         </div>
                         <Badge variant="outline" className="bg-red-100 text-red-700">
-                          {locale === 'hi' ? 'अपेक्षित' : 'Expected'}
+                          {locale === 'hi' ? 'निर्धारित' : 'Scheduled'}
                         </Badge>
                       </div>
                       
@@ -281,7 +281,7 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                               {locale === 'hi' ? 'परिणाम घोषणा' : 'Result Declaration'}
                             </p>
                             <p className="text-sm text-gray-600">
-                              {locale === 'hi' ? 'अपेक्षित: TRE-4 के बाद' : 'Expected: After TRE-4'}
+                              {locale === 'hi' ? '1 नवंबर 2025' : 'November 1, 2025'}
                             </p>
                           </div>
                         </div>
@@ -535,23 +535,23 @@ export default function STETPage({ params: { locale } }: STETPageProps) {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="p-3 bg-yellow-50 rounded border border-yellow-200">
-                    <p className="text-sm font-medium text-yellow-800">
-                      {locale === 'hi' ? 'STET 2024 परिणाम' : 'STET 2024 Results'}
+                  <div className="p-3 bg-green-50 rounded border border-green-200">
+                    <p className="text-sm font-medium text-green-800">
+                      {locale === 'hi' ? 'STET 2025 अधिसूचना' : 'STET 2025 Notification'}
                     </p>
-                    <p className="text-xs text-yellow-600">70.25% Pass Rate</p>
+                    <p className="text-xs text-green-600">Released Sep 10</p>
                   </div>
                   <div className="p-3 bg-blue-50 rounded border border-blue-200">
                     <p className="text-sm font-medium text-blue-800">
-                      {locale === 'hi' ? 'STET 2025 अधिसूचना' : 'STET 2025 Notification'}
+                      {locale === 'hi' ? 'आवेदन अवधि' : 'Application Period'}
                     </p>
-                    <p className="text-xs text-blue-600">After TRE-4</p>
+                    <p className="text-xs text-blue-600">Sep 11-19, 2025</p>
                   </div>
-                  <div className="p-3 bg-green-50 rounded border border-green-200">
-                    <p className="text-sm font-medium text-green-800">
-                      {locale === 'hi' ? 'प्रमाणपत्र उपलब्ध' : 'Certificates Available'}
+                  <div className="p-3 bg-red-50 rounded border border-red-200">
+                    <p className="text-sm font-medium text-red-800">
+                      {locale === 'hi' ? 'परीक्षा तिथि' : 'Exam Date'}
                     </p>
-                    <p className="text-xs text-green-600">Download Now</p>
+                    <p className="text-xs text-red-600">Oct 4-25, 2025</p>
                   </div>
                 </CardContent>
               </Card>
