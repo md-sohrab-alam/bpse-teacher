@@ -1,0 +1,44 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "BPSC Teacher Recruitment 2025 Notification Expected Soon",
+      "titleHi": "बीपीएससी शिक्षक भर्ती 2025 का नोटिफिकेशन जल्द आने की उम्मीद",
+      "content": "The Bihar Public Service Commission is expected to release the official notification for Teacher Recruitment 2025 in the coming weeks. Candidates are advised to stay updated.",
+      "contentHi": "बिहार लोक सेवा आयोग से शिक्षक भर्ती 2025 का आधिकारिक नोटिफिकेशन आने वाले हफ्तों में जारी होने की उम्मीद है। उम्मीदवारों को अपडेट रहने की सलाह दी जाती है।",
+      "date": "2025-01-15T10:00:00Z",
+      "source": "BPSC Official",
+      "url": "https://bpsc.bih.nic.in/",
+      "type": "notification",
+      "priority": "high",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "title": "STET 2025 Application Process to Begin",
+      "titleHi": "एसटीईटी 2025 आवेदन प्रक्रिया शुरू होने वाली है",
+      "content": "The Secondary Teacher Eligibility Test (STET) 2025 application process is expected to begin soon. All eligible candidates can apply online.",
+      "contentHi": "माध्यमिक शिक्षक पात्रता परीक्षा (एसटीईटी) 2025 की आवेदन प्रक्रिया जल्द शुरू होने की उम्मीद है। सभी पात्र उम्मीदवार ऑनलाइन आवेदन कर सकते हैं।",
+      "date": "2025-01-14T14:30:00Z",
+      "source": "BSEB Official",
+      "url": "https://bseb.org.in/",
+      "type": "news",
+      "priority": "medium",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "title": "TRE 5.0 Exam Pattern and Syllabus Released",
+      "titleHi": "टीआरई 5.0 परीक्षा पैटर्न और सिलेबस जारी",
+      "content": "The detailed exam pattern and syllabus for Teacher Recruitment Exam (TRE) 5.0 has been officially released by BPSC.",
+      "contentHi": "शिक्षक भर्ती परीक्षा (टीआरई) 5.0 का विस्तृत परीक्षा पैटर्न और सिलेबस बीपीएससी द्वारा आधिकारिक रूप से जारी किया गया है।",
+      "date": "2025-01-13T09:15:00Z",
+      "source": "BPSC Official",
+      "url": "https://bpsc.bih.nic.in/",
+      "type": "update",
+      "priority": "high",
+      "isActive": true
+    }
+  ]
+}
+
