@@ -50,44 +50,52 @@ export async function fetchLatestExamUpdates(): Promise<ExamUpdate[]> {
   
   return [
     {
-      title: 'BPSC Teacher Recruitment 2025 Notification Expected Soon',
-      content: 'The Bihar Public Service Commission is expected to release the official notification for Teacher Recruitment 2025 in the coming weeks. Candidates are advised to stay updated.',
+      title: 'TRE-3.0 Cancelled Due to Paper Leak - New Dates Expected',
+      content: 'BPSC cancelled TRE-3.0 in March 2024 due to question paper leak allegations. Over 5 lakh candidates were affected. New examination dates will be announced soon.',
       date: new Date().toISOString(),
       source: 'BPSC Official',
       url: 'https://bpsc.bih.nic.in/',
       type: 'notification'
     },
     {
-      title: 'STET 2025 Application Process to Begin',
-      content: 'The Secondary Teacher Eligibility Test (STET) 2025 application process is expected to begin soon. All eligible candidates can apply online.',
+      title: 'STET 2024 Results Declared - 70.25% Pass Rate',
+      content: 'BSEB announced STET 2024 results in November 2024. Out of 423,822 candidates, 297,747 (70.25%) were declared successful. Certificates available for download.',
       date: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
       source: 'BSEB Official',
       url: 'https://bseb.org.in/',
       type: 'news'
     },
     {
-      title: 'TRE 5.0 Exam Pattern and Syllabus Released',
-      content: 'The detailed exam pattern and syllabus for Teacher Recruitment Exam (TRE) 5.0 has been officially released by BPSC.',
+      title: 'TRE-4.0 Recruitment for 1.6 Lakh Posts Expected',
+      content: 'BPSC is preparing to fill approximately 1.6 lakh teaching positions through TRE-4.0 recruitment drive, tentatively scheduled for late 2025. Vacancies across all teaching levels.',
       date: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
       source: 'BPSC Official',
       url: 'https://bpsc.bih.nic.in/',
       type: 'update'
     },
     {
-      title: 'BPSC Teacher Cut-off Marks 2024 Released',
-      content: 'BPSC has officially released the cut-off marks for Teacher Recruitment 2024. Check category-wise cut-offs on the official website.',
+      title: 'Massive Protests in Patna Over STET Delays',
+      content: 'Thousands of STET aspirants protested in Patna in August 2025, demanding STET be conducted before TRE-4. Education Minister stated STET will be held after TRE-4 vacancies are released.',
       date: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
+      source: 'News Reports',
+      url: 'https://timesofindia.indiatimes.com/',
+      type: 'news'
+    },
+    {
+      title: 'BPSC Issues Advisory Against Fraudulent Coaching Claims',
+      content: 'BPSC warned candidates against coaching centers claiming their materials are directly aligned with actual exam questions. Commission clarified all papers are randomly selected from official question bank.',
+      date: new Date(Date.now() - 345600000).toISOString(), // 4 days ago
       source: 'BPSC Official',
       url: 'https://bpsc.bih.nic.in/',
       type: 'notification'
     },
     {
-      title: 'STET 2024 Result Declared',
-      content: 'The result for STET 2024 has been declared. Successful candidates can download their certificates from the official portal.',
-      date: new Date(Date.now() - 345600000).toISOString(), // 4 days ago
-      source: 'BSEB Official',
-      url: 'https://bseb.org.in/',
-      type: 'news'
+      title: 'STET 2025 Notification Expected After TRE-4 Vacancies',
+      content: 'Education Minister Sunil Kumar stated that STET 2025 will be conducted only after TRE-4 vacancies are released. This decision aims to manage the number of qualified candidates effectively.',
+      date: new Date(Date.now() - 432000000).toISOString(), // 5 days ago
+      source: 'Government Statement',
+      url: 'https://state.bihar.gov.in/',
+      type: 'update'
     }
   ]
 }

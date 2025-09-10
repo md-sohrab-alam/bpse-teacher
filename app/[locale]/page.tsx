@@ -174,8 +174,8 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
               </CardHeader>
               <CardContent className="pt-6">
                                  <p className="text-gray-600 mb-4">
-                   The Secondary Teacher Eligibility Test (STET) is conducted by the Bihar School Examination Board (BSEB) 
-                   to determine the eligibility of candidates for appointment as teachers in secondary schools.
+                   STET 2024 results were declared in November 2024 with 70.25% pass rate. STET 2025 notification is expected after TRE-4 vacancies are released. 
+                   The exam determines eligibility for teaching positions in Bihar schools.
                  </p>
                  <div className="flex space-x-3">
                    <Button variant="stet" asChild>
@@ -203,8 +203,8 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
               </CardHeader>
               <CardContent className="pt-6">
                                  <p className="text-gray-600 mb-4">
-                   BPSC conducts teacher recruitment for various subjects and levels in government schools 
-                   across Bihar. This is a direct recruitment process for permanent positions.
+                   TRE-3.0 was cancelled in March 2024 due to paper leak allegations. TRE-4.0 is expected to fill 1.6 lakh teaching positions 
+                   across Bihar in late 2025. This is a direct recruitment process for permanent positions.
                  </p>
                  <div className="flex space-x-3">
                    <Button variant="bpsc" asChild>

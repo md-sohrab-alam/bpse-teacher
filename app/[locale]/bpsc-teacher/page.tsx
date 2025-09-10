@@ -63,11 +63,11 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
   };
 
   const importantDates = [
-    { label: 'TRE-4 Notification', date: 'Expected: Jan 2025', status: 'expected' },
-    { label: 'Application Start', date: 'Expected: Feb 2025', status: 'expected' },
-    { label: 'Application End', date: 'Expected: Mar 2025', status: 'expected' },
-    { label: 'Written Exam', date: 'Expected: May 2025', status: 'expected' },
-    { label: 'Interview Phase', date: 'Expected: Jul 2025', status: 'expected' }
+    { label: 'TRE-3.0 Cancelled', date: 'March 2024 - Paper Leak', status: 'cancelled' },
+    { label: 'TRE-4.0 Notification', date: 'Expected: Late 2025', status: 'expected' },
+    { label: 'TRE-4.0 Application', date: 'After Notification', status: 'expected' },
+    { label: 'TRE-4.0 Written Exam', date: 'Tentative: 2025', status: 'expected' },
+    { label: 'TRE-4.0 Interview', date: 'After Written Exam', status: 'expected' }
   ];
 
   const downloads = [
@@ -80,10 +80,10 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
     { year: 2023, category: 'BC', passMarks: '55%', cutoff: '70-80%' },
     { year: 2023, category: 'OBC', passMarks: '52%', cutoff: '65-75%' },
     { year: 2023, category: 'SC/ST/PwD', passMarks: '50%', cutoff: '60-70%' },
-    { year: 2024, category: 'General', passMarks: 'TBA', cutoff: 'TBA' },
-    { year: 2024, category: 'BC', passMarks: 'TBA', cutoff: 'TBA' },
-    { year: 2024, category: 'OBC', passMarks: 'TBA', cutoff: 'TBA' },
-    { year: 2024, category: 'SC/ST/PwD', passMarks: 'TBA', cutoff: 'TBA' }
+    { year: 2024, category: 'General', passMarks: 'Cancelled', cutoff: 'TRE-3.0 Cancelled' },
+    { year: 2024, category: 'BC', passMarks: 'Cancelled', cutoff: 'TRE-3.0 Cancelled' },
+    { year: 2024, category: 'OBC', passMarks: 'Cancelled', cutoff: 'TRE-3.0 Cancelled' },
+    { year: 2024, category: 'SC/ST/PwD', passMarks: 'Cancelled', cutoff: 'TRE-3.0 Cancelled' }
   ];
 
   return (
@@ -125,7 +125,7 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                     <h3 className="text-lg font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2">English</h3>
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        The Bihar Public Service Commission (BPSC) Teacher Recruitment Examination (TRE) is a prestigious competitive exam conducted to recruit qualified teachers for government schools across Bihar. This examination is conducted in multiple phases and covers various teaching levels including Primary, Upper Primary, Secondary, and Senior Secondary positions.
+                        The Bihar Public Service Commission (BPSC) Teacher Recruitment Examination (TRE) is a prestigious competitive exam conducted to recruit qualified teachers for government schools across Bihar. TRE-3.0 was cancelled in March 2024 due to paper leak allegations, affecting over 5 lakh candidates. TRE-4.0 is expected to fill approximately 1.6 lakh teaching positions across all levels.
                       </p>
                       
                       <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
@@ -149,7 +149,7 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                            <span>Regular recruitment cycle with TRE-4 expected in 2025</span>
+                            <span>TRE-4.0 for 1.6 lakh posts expected in late 2025</span>
                           </li>
                         </ul>
                       </div>
@@ -183,7 +183,7 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                     <h3 className="text-lg font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2">हिंदी</h3>
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        बिहार लोक सेवा आयोग (BPSC) शिक्षक भर्ती परीक्षा (TRE) बिहार के सरकारी स्कूलों में योग्य शिक्षकों की भर्ती के लिए आयोजित की जाने वाली एक प्रतिष्ठित प्रतियोगी परीक्षा है। यह परीक्षा कई चरणों में आयोजित की जाती है और प्राथमिक, उच्च प्राथमिक, माध्यमिक और उच्च माध्यमिक स्तर के विभिन्न शिक्षण पदों को कवर करती है।
+                        बिहार लोक सेवा आयोग (BPSC) शिक्षक भर्ती परीक्षा (TRE) बिहार के सरकारी स्कूलों में योग्य शिक्षकों की भर्ती के लिए आयोजित की जाने वाली एक प्रतिष्ठित प्रतियोगी परीक्षा है। TRE-3.0 को मार्च 2024 में पेपर लीक के आरोपों के कारण रद्द कर दिया गया था, जिससे 5 लाख से अधिक उम्मीदवार प्रभावित हुए। TRE-4.0 से लगभग 1.6 लाख शिक्षण पदों को भरने की उम्मीद है।
                       </p>
                       
                       <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
@@ -207,7 +207,7 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
-                            <span>नियमित भर्ती चक्र, TRE-4 2025 में अपेक्षित</span>
+                            <span>TRE-4.0 से 1.6 लाख पदों की भर्ती 2025 के अंत में अपेक्षित</span>
                           </li>
                         </ul>
                       </div>
@@ -559,8 +559,8 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                   <h4 className="font-semibold text-gray-800">TRE-4 2025 Timeline</h4>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Official notification for TRE-4 2025 is expected to be released soon. 
-                  The following dates are tentative based on previous year patterns.
+                  TRE-3.0 was cancelled in March 2024 due to paper leak allegations. 
+                  TRE-4.0 is expected to fill 1.6 lakh teaching positions in late 2025.
                 </p>
               </div>
               
@@ -590,8 +590,8 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
                   <h4 className="font-semibold text-yellow-800">Cut-off Information</h4>
                 </div>
                 <p className="text-sm text-yellow-700">
-                  Cut-off marks vary based on exam difficulty, number of vacancies, and candidate performance. 
-                  The 2024 cut-offs will be available after the exam results are declared.
+                  TRE-3.0 was cancelled in March 2024 due to paper leak allegations. 
+                  TRE-4.0 cut-offs will be available after the exam is conducted.
                 </p>
               </div>
               
@@ -678,19 +678,19 @@ export default function BPSCTeacherPage({ params: { locale } }: BPSCTeacherPageP
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-sm text-red-800">
+                      <strong>TRE-3.0:</strong> Cancelled (Paper Leak)
+                    </p>
+                  </div>
                   <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-sm text-green-800">
-                      <strong>TRE-4 2025:</strong> Expected soon
+                      <strong>TRE-4.0:</strong> 1.6 lakh posts expected
                     </p>
                   </div>
                   <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
                     <p className="text-sm text-blue-800">
                       <strong>Domicile Policy:</strong> 84.4% posts for locals
-                    </p>
-                  </div>
-                  <div className="p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                    <p className="text-sm text-purple-800">
-                      <strong>Multiple Phases:</strong> Written + Interview
                     </p>
                   </div>
                 </div>
